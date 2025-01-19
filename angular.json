@@ -40,8 +40,7 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "baseHref": "app-decoupen"
+            }
           },
           "configurations": {
             "production": {
