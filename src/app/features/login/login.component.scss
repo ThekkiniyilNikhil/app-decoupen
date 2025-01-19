@@ -1,0 +1,243 @@
+.login-outer-container {
+    margin: 120px 0 60px 0;
+}
+.login-blck {
+    max-width: 555px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 29.4px rgba(198, 198, 198, 0.25);
+    border-radius: 24px;
+    padding: 50px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+    .title-text {
+        margin-top: 0;
+        margin-bottom: 28px;
+        font-weight: 600;
+        font-size: 36px;
+        color: #000000;
+    }
+}
+.login-input-blck {
+    & > div {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .label-text {
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        font-size: 14px;
+        font-weight: 600;
+        color: #575757;
+    }
+    input {
+        width: 100%;
+        font-size: 16px;
+        padding: 18px 16px;
+        border: 1px solid #dfdfdf;
+        border-radius: 8px;
+        box-sizing: border-box;
+        &::placeholder {
+            color: #adadad;
+        }
+    }
+}
+.privacy-pol-txt {
+    margin-top: 24px;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5f5f5f;
+    text-align: center;
+    a {
+        color: #EC4C1D;
+        text-decoration: none;
+    }
+}
+.continue-btn {
+    width: 100%;
+    height: 58px;
+    font-family: "Plus Jakarta Sans", serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    background: linear-gradient(91.54deg, #E6132F -16.13%, #EC4C1D 118.64%);
+    border-radius: 8px;
+    cursor: pointer;
+    &.disabled-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+.signin-seperation {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #efefef;
+    }
+    span {
+        font-size: 14px;
+        color: #333;
+        font-weight: 600;
+        background-color: #FFFFFF;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px;
+    }
+}
+.sign-in-opt-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    height: 58px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .google-icon {
+        width: 21px;
+        height: 21px;
+        background: url("/assets/images/sprite-svg.svg") no-repeat -436px -4px;
+    }
+    .mob-icon {
+        width: 15px;
+        height: 23px;
+        background: url("/assets/images/sprite-svg.svg") no-repeat -470px -3px;
+    }
+    .email-icon {
+        width: 22px;
+        height: 20px;
+        background: url("/assets/images/sprite-svg.svg") no-repeat -261px -44px;
+    }
+    span {
+        font-size: 18px;
+        color: #000000;
+        font-weight: 600;
+    }
+}
+.field-error {
+    color: #E6132F;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+.otp-send-msg {
+    font-size: 18px;
+    margin: 0;
+    color: #5f5f5f;
+    strong {
+        color: #1f1f1f;
+    }
+}
+.otp-input-container {
+    margin-top: 32px;
+    margin-bottom: 26px;
+}
+:host ::ng-deep ngx-otp-input {
+    display: block;
+    width: 100%;
+    .ngx-otp-input-form {
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+        @media screen and (max-width: 767px) {
+            gap: 5px;
+        }
+    }
+    .ngx-otp-input-box {
+        flex: 1;
+        height: 64px;
+        padding: 0;
+        border-radius: 8px;
+        border: 1px solid #dfdfdf;
+        font-size: 20px;
+        color: #1f1f1f;
+        font-weight: 700;
+        font-family: "Plus Jakarta Sans", serif;
+        @media screen and (max-width: 767px) {
+            height: 49px;
+            font-size: 16px;
+        }
+    }
+}
+.otp-back-btn {
+    width: 100%;
+    height: 58px;
+    cursor: pointer;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", serif;
+    font-size: 18px;
+    background-color: #FFFFFF;
+}
+.mt-12px {
+    margin-top: 12px;
+}
+.resend-otp-blck {
+    margin-top: 24px;
+    text-align: center;
+    .warn-msg {
+        color: #5f5f5f;
+        margin: 0;
+    }
+    .resend-otp-btn {
+        text-decoration: none;
+        color: #EC4C1D;
+        cursor: pointer;
+    }
+}
+.resend-otp-blck :where(.warn-msg, .resend-otp-btn) {
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", serif;
+    font-weight: 700;
+}
+.otp-privacy-policy {
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 767px) {
+    .login-outer-container {
+        padding: 0 25px;
+    }
+    .login-blck {
+        max-width: 100%;
+        padding: 32px 20px;
+        .title-text {
+            font-size: 28px;
+        }
+        .otp-title-tex {
+            margin-bottom: 14px;
+        }
+    }
+    .privacy-pol-txt {
+        text-align: left;
+    }
+    .otp-send-msg {
+        font-size: 14px;
+    }
+    .continue-btn,
+    .otp-back-btn,
+    .resend-otp-btn {
+        font-size: 16px;
+    }
+    .otp-privacy-policy {
+        margin-top: 40px;
+    }
+}

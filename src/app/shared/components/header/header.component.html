@@ -1,0 +1,15 @@
+<div class="header-main-container">
+    <div class="header-container">
+        <a href="">
+            <img src="assets/images/logo.svg" alt="">
+        </a>
+        <div class="middle-blck" *ngIf="!isLoginScreen">
+            <a href="" class="header-nav-link">List your property</a>
+            <a href="" class="header-nav-link">User Dashboard</a>
+        </div>
+        <div class="right-blck">
+            <button type="button" class="login-btn" *ngIf="!isLoginScreen">Login</button>
+            <div class="menu-dropdown"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="login-outer-container">
+    <div class="login-blck">
+        <!-- login container -->
+        <ng-container *ngIf="true">
+            <h3 class="title-text">Login or register</h3>
+            <div class="login-input-blck">
+                <div class="position-relative" *ngIf="loginType === loginTypeEnum.MOBILE">
+                    <p class="label-text">mobile number</p>
+                    <input type="text" placeholder="+91- Enter your number" (input)="numbersOnlyFn($event)" [(ngModel)]="mobNumber" maxlength="10">
+                    <span class="field-error" *ngIf="mobErrorMessages['invalidMobileNumber'] !== ''">{{ mobErrorMessages['invalidMobileNumber'] }}</span>
+                </div>
+                <div class="position-relative" *ngIf="loginType === loginTypeEnum.EMAIL">
+                    <p class="label-text">Email ID</p>
+                    <input type="text" placeholder="Enter your email" [(ngModel)]="emailId">
+                    <span class="field-error" *ngIf="emailErrorMessages['invalidEmail'] !== ''">{{ emailErrorMessages['invalidEmail'] }}</span>
+                </div>
+                <button type="button" class="continue-btn" (click)="signInContinueFn()">Continue</button>
+                <div class="signin-seperation">
+                    <span>Or sign in with</span>
+                </div>
+                <div class="sign-in-opt-btn">
+                    <div class="google-icon"></div>
+                    <span>Continue with Google</span>
+                </div>
+                <div class="sign-in-opt-btn" (click)="chooseLoginTypeFn(loginTypeEnum.MOBILE)" *ngIf="loginType === loginTypeEnum.EMAIL">
+                    <div class="mob-icon"></div>
+                    <span>Continue with Mobile Number</span>
+                </div>
+                <div class="sign-in-opt-btn" (click)="chooseLoginTypeFn(loginTypeEnum.EMAIL)" *ngIf="loginType === loginTypeEnum.MOBILE">
+                    <div class="email-icon"></div>
+                    <span>Continue with Email</span>
+                </div>
+                <p class="privacy-pol-txt">By proceeding, you agree to DecoupeN's <a href="">Privacy Policy</a></p>
+            </div>
+        </ng-container>
+        <!-- otp verification container -->
+         <ng-container *ngIf="false">
+            <h3 class="title-text otp-title-tex">Verify OTP</h3>
+            <p class="otp-send-msg">
+                Enter 6-digit OTP sent to <strong>+918383992222</strong>
+            </p>
+            <div class="otp-input-container">
+                <ngx-otp-input #otpInput [options]="otpOptions" (otpComplete)="onOtpChange($event)"></ngx-otp-input>
+            </div>
+            <button type="button" class="continue-btn" [class.disabled-btn]="!isOTPValid">Continue</button>
+            <button type="button" class="otp-back-btn mt-12px">Back</button>
+            <div class="resend-otp-blck">
+                <p class="warn-msg" *ngIf="false">Resend OTP in <span>59</span> secs</p>
+                <a class="resend-otp-btn">Resend OTP</a>
+            </div>
+            <p class="privacy-pol-txt otp-privacy-policy">By proceeding, you agree to DecoupeN's <a href="">Privacy Policy</a></p>
+         </ng-container>
+    </div>
+</div>

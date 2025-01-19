@@ -1,0 +1,66 @@
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.faq-section-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #15172E;
+    margin-top: 0;
+    margin-bottom: 58px;
+}
+.faq-column-one,
+.faq-column-two {
+    flex: 1;
+}
+.faq-acc-blck {
+    padding: 28px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 42px #F0F0F4;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .content-blck {
+        flex: 1;
+        h3 {
+            width: 85%;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            color: #000;
+            line-height: 140%;
+        }
+        p {
+            width: 85%;
+            font-size: 15px;
+            font-weight: 500;
+            color: #717171;
+            margin-top: 12px;
+            margin-bottom: 0;
+            line-height: 140%;
+        }
+    }
+    .icon-blck {
+        width: 20px;
+        height: 10px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -403px -8px;
+        margin-top: 6px;
+        transition: transform 0.25s;
+        &.rotate {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

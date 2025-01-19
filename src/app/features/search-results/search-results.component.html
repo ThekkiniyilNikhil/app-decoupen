@@ -1,0 +1,152 @@
+<div class="srch-rslts-outer-contr">
+    <div class="srch-rslts-inner-contr">
+        <div class="filter-by-blck">
+            <h3 class="ttl-txt">Filter by</h3>
+            <!-- SPENDING PLANS BLOCK -->
+            <ng-container>
+                <h4 class="sub-ttl-txt">Your spending plans</h4>
+                <div class="price-rng-blck">
+                    <span>2,000 INR</span>
+                    <span>20,000 INR</span>
+                </div>
+                <!-- PRICE RANGE SLIDER PENDING -->
+            </ng-container>
+            <!-- STAY OPTIONS -->
+             <ng-container>
+                <h4 class="sub-ttl-txt">Stay Options</h4>
+                <ng-container *ngFor="let item of dummyStayOptions; let i = index; let isLast = last;">
+                    <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                        <span class="cntnt-txt">{{ item }}</span>
+                        <input class="filter-item-chcbx" type="checkbox">
+                    </div>
+                </ng-container>
+             </ng-container>
+             <!-- RATINGS -->
+              <ng-container>
+                <h4 class="sub-ttl-txt">Ratings</h4>
+                <ng-container *ngFor="let item of dummyStarRatings; let i = index; let isLast = last;">
+                    <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                        <span class="cntnt-txt">{{ item }}</span>
+                        <input class="filter-item-chcbx" type="checkbox">
+                    </div>
+                </ng-container>
+              </ng-container>
+              <!-- ROOM GOODIES -->
+              <ng-container>
+                <h4 class="sub-ttl-txt">Room Goodies</h4>
+                <ng-container *ngFor="let item of dummyRoomGoodies; let i = index; let isLast = last;">
+                    <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                        <span class="cntnt-txt">{{ item }}</span>
+                        <input class="filter-item-chcbx" type="checkbox">
+                    </div>
+                </ng-container>
+                <a href="" class="show-more-goodies-btn">Show more</a>
+              </ng-container>
+              <!-- BEDROOMS AND BATHROOMS COUNTER -->
+              <ng-container>
+                <h4 class="sub-ttl-txt">Bedrooms & bathrooms</h4>
+                <ng-container>
+                    <div class="bed-bath-blck">
+                        <span class="cntnt-txt">Bedrooms</span>
+                        <app-increment-decrement-counter [counterValue]="4" (counterValueChange)="counterValueChangeFn($event)"></app-increment-decrement-counter>
+                    </div>
+                    <div class="bed-bath-blck">
+                        <span class="cntnt-txt">Bathrooms</span>
+                        <app-increment-decrement-counter [counterValue]="4" (counterValueChange)="counterValueChangeFn($event)"></app-increment-decrement-counter>
+                    </div>
+                </ng-container>
+              </ng-container>
+              <!-- MEALS -->
+              <ng-container>
+                <h4 class="sub-ttl-txt">Meals</h4>
+                <ng-container *ngFor="let item of dummyMeals; let i = index; let isLast = last;">
+                    <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                        <span class="cntnt-txt">{{ item }}</span>
+                        <input class="filter-item-chcbx" type="checkbox">
+                    </div>
+                </ng-container>
+              </ng-container>
+        </div>
+        <div class="ppty-found-blck">
+            <h2 class="ppty-found-ttl">230 properties found in Trivandrum</h2>
+            <div class="sortby-blck">
+                <span class="sortby-txt">Sort by : </span>
+                <div class="sortby-opts-blck">
+                    <div class="sortby-opts selected">
+                        <span class="sortby">User Rating:&nbsp;</span>
+                        <span class="sortby-value">Highest First</span>
+                    </div>
+                    <div class="sortby-opts">
+                        <span class="sortby">Price:&nbsp;</span>
+                        <span class="sortby-value">Highest First</span>
+                    </div>
+                    <div class="sortby-opts">
+                        <span class="sortby">Price:&nbsp;</span>
+                        <span class="sortby-value">Lowest First</span>
+                    </div>
+                </div>
+            </div>
+            <!-- PROPERTIES LISTS BLOCK -->
+             <div class="ppty-lists-cntr">
+                <div class="ppty-list-blck" *ngFor="let property of dummyPropsFoundsLIst | paginate: { itemsPerPage: 10, currentPage: currentPage }; let index = index;">
+                    <div class="ppty-img-blck">
+                        <img class="ppty-img" src="/assets/images/property-room.png" alt="">
+                        <div class="ppty-dscnt">{{property?.discountOfferRate}}% off</div>
+                        <!-- TAG FOR SMALL SCREENS -->
+                        <div class="ppty-tag-sm">{{property?.tagName}}</div>
+                    </div>
+                    <div class="ppty-det-blck">
+                        <h3 class="ppty-name">{{property?.propertyName}}</h3>
+                        <div class="star-rat-blck">
+                            <div class="star-ico"></div>
+                            <span class="star-rat-val">{{property?.starRating}} ({{property?.totalReviews}})</span>
+                        </div>
+                        <p class="ppty-dist-det">{{property?.distance}}</p>
+                        <!-- PRICE DETAILS FOR SMALL SCREENS -->
+                        <div class="ppty-price-blck-sm">
+                            <div>
+                                <p class="ppty-strike-off-price-sm">&#8377;{{property?.strikeOffPrice}}</p>
+                                <p class="ppty-price-sm">&#8377;{{property?.currentPrice}}</p>
+                            </div>
+                            <button class="choos-room-btn" type="button">Choose Room</button>
+                        </div>
+                        <div class="earn-decoupons-blck">
+                            <div class="coupon-ico"></div>
+                            <span>Earn 2 decoupens</span>
+                        </div>
+                        <div class="decoupn-add-cb-blck">
+                            <div class="lamp-ico"></div>
+                            <span>Your decoupens will get you additional 2 cashbacks.</span>
+                        </div>
+                    </div>
+                    <div class="ppty-price-blck">
+                        <div class="ppty-tag-lg">Most Popular</div>
+                        <p class="ppty-strike-off-price">&#8377;5900</p>
+                        <p class="ppty-price">&#8377;5400</p>
+                        <button class="choos-room-btn" type="button">Choose Room</button>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <div class="pagination-controls-blck">
+        <pagination-controls (pageChange)="pageChangeFn($event)" previousLabel="" nextLabel="">
+        </pagination-controls>
+    </div>
+    <!-- SUBSCRIBE TO OUR NEWSLETTER -->
+     <div class="subscribe-newsletter-blck">
+        <div class="subscribe-newsletter-inner bg-lg bg-sm">
+            <div class="left-blck">
+                <h2>Stay in the know</h2>
+                <p>Sign up to get marketing emails from DecoupeN, including promotions, rewards, travel experiences and information about DecoupeN.com’s services.</p>
+                <div class="email-blck">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+            <div class="right-blck">
+                <img src="/assets/images/subscribe-imgs.png" alt="">
+            </div>
+        </div>
+     </div>
+</div>

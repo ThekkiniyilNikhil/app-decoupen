@@ -1,0 +1,25 @@
+<div class="faq-container">
+    <div class="faq-column-one">
+        <h3 class="faq-section-title">Frequently Asked<br>Questions</h3>
+        <ng-container *ngFor="let item of faqColumnOne">
+            <div class="faq-acc-blck" (click)="toggleAccordion(item.id)">
+                <div class="content-blck">
+                    <h3>{{item.title}}</h3>
+                    <p *ngIf="openFaqId === item?.id">{{item.content}}</p>
+                </div>
+                <div class="icon-blck" [class.rotate]="openFaqId === item?.id"></div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="faq-column-two">
+        <ng-container *ngFor="let item of faqColumnTwo">
+            <div class="faq-acc-blck" (click)="toggleAccordion(item.id)">
+                <div class="content-blck">
+                    <h3>{{item.title}}</h3>
+                    <p *ngIf="openFaqId === item?.id">{{item.content}}</p>
+                </div>
+                <div class="icon-blck" [class.rotate]="openFaqId === item?.id"></div>
+            </div>
+        </ng-container>
+    </div>
+</div>

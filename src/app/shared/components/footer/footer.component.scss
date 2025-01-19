@@ -1,0 +1,69 @@
+.ftr-outr-blck {
+    padding: 0 24px;
+}
+.ftr-inner-blck {
+    background-color: #FCFAF8;
+    border-radius: 24px;
+}
+.ftr-blck {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 36px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    .ftr-brnd-logo {
+        grid-column: 1/2;
+    }
+    .social-share-blcks {
+        grid-column: 2/-1;
+        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+    .insta-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -260px -5px;
+    }
+    .x-icon {
+        display: inline-block;
+        width: 20px;
+        height: 16px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -300px -5px;
+    }
+    .fb-icon {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -340px -1px;
+    }
+    .linked-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -370px 0px;
+    }
+    .tc-blck {
+        grid-column: 1/2;
+    }
+    .tc-link {
+        font-weight: 400;
+        color: #000;
+        font-size: 16px;
+        text-decoration: none;
+        &:last-child {
+            margin-left: 20px;
+        }
+    }
+    .copyright-details {
+        grid-column: 2/-1;
+        justify-self: flex-end;
+        margin: 0;
+        color: #222222;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
