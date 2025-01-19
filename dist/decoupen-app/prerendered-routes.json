@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/app-decoupen": {},
+    "/app-decoupen/home": {},
+    "/app-decoupen/login": {},
+    "/app-decoupen/search-results": {}
+  }
+}
