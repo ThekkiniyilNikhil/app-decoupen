@@ -1,4 +1,21 @@
 <div class="srch-rslts-outer-contr">
+    <!-- HEADER IN SEARCH RESULTS -->
+     <div class="header-in-srch-rslts-cntr" [class.show]="isScrolledToThreshold">
+        <div class="header-container">
+            <a href="">
+                <img src="assets/images/logo.svg" alt="">
+            </a>
+            <div class="minimal-srch-blck"></div>
+            <div class="right-blck">
+                <button type="button" class="login-btn">Login</button>
+                <div class="menu-dropdown"></div>
+            </div>
+        </div>
+     </div>
+    <!-- SEARCH OPTIONS -->
+    <div class="srch-optns-contr" [class.hidden]="isScrolledToThreshold">
+        <div class="srch-optns-blck"></div>
+    </div>
     <div class="srch-rslts-inner-contr">
         <div class="filter-by-blck">
             <h3 class="ttl-txt">Filter by</h3>

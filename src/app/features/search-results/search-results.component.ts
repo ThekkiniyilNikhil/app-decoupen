@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -136,6 +136,10 @@ export class SearchResultsComponent {
     },
   ];
   currentPage = 1;
+  isScrolledToThreshold = false;
+  lastScrollPosition: number = 0;
+  threshold: number = 130;
+  scrollBuffer: number = 20;
 
   counterValueChangeFn(counterValue: number): void {
     console.log('Counter value changed to: ', counterValue);
@@ -143,5 +147,22 @@ export class SearchResultsComponent {
 
   pageChangeFn(page: any): void {
     console.log('Page changed to: ', page);
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Only change visibility if the scroll position crosses the threshold + buffer range
+    if (Math.abs(currentScrollPosition - this.lastScrollPosition) > this.scrollBuffer) {
+      if (currentScrollPosition > this.threshold) {
+        this.isScrolledToThreshold = true;
+      } else {
+        this.isScrolledToThreshold = false;
+      }
+
+      // Update the last scroll position
+      this.lastScrollPosition = currentScrollPosition;
+    }
   }
 }
