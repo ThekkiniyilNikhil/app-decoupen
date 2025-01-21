@@ -2,10 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
 
 @Component({
   selector: 'app-search-results',
-  imports: [CommonModule, SharedModule, NgxPaginationModule],
+  imports: [CommonModule, SharedModule, NgxPaginationModule, MatDatepickerModule, MatNativeDateModule],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss'
 })
@@ -140,6 +143,7 @@ export class SearchResultsComponent {
   lastScrollPosition: number = 0;
   threshold: number = 130;
   scrollBuffer: number = 20;
+  customHeader = CustomDatepickerHeaderComponent;
 
   counterValueChangeFn(counterValue: number): void {
     console.log('Counter value changed to: ', counterValue);
@@ -165,4 +169,11 @@ export class SearchResultsComponent {
       this.lastScrollPosition = currentScrollPosition;
     }
   }
+
+  // Filter function to disable previous dates
+  filterDates = (date: Date | null): boolean => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time for accurate comparison
+    return date ? date >= today : false;
+  };
 }

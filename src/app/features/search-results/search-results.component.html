@@ -14,7 +14,10 @@
      </div>
     <!-- SEARCH OPTIONS -->
     <div class="srch-optns-contr" [class.hidden]="isScrolledToThreshold">
-        <div class="srch-optns-blck"></div>
+        <div class="srch-optns-blck">
+            <input type="text" [matDatepicker]="picker" readonly (click)="picker.open()" [matDatepickerFilter]="filterDates">
+            <mat-datepicker [calendarHeaderComponent]="customHeader" #picker panelClass="reservation-datepicker"></mat-datepicker>
+        </div>
     </div>
     <div class="srch-rslts-inner-contr">
         <div class="filter-by-blck">
