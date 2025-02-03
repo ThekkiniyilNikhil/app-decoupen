@@ -29,7 +29,10 @@
                     <span>2,000 INR</span>
                     <span>20,000 INR</span>
                 </div>
-                <!-- PRICE RANGE SLIDER PENDING -->
+                <mat-slider min="2000" max="20000" (input)="onPlanRangeChangeFn()">
+                    <input [(ngModel)]="minSpendingPlanRange" matSliderStartThumb>
+                    <input [(ngModel)]="maxSpendingPlanRange" matSliderEndThumb>
+                </mat-slider>
             </ng-container>
             <!-- STAY OPTIONS -->
              <ng-container>

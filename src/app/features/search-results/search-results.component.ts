@@ -5,10 +5,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
+import { FormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
 
 @Component({
   selector: 'app-search-results',
-  imports: [CommonModule, SharedModule, NgxPaginationModule, MatDatepickerModule, MatNativeDateModule],
+  imports: [
+    CommonModule, SharedModule, NgxPaginationModule, 
+    MatDatepickerModule, MatNativeDateModule, FormsModule,
+    MatSliderModule
+  ],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss'
 })
@@ -144,6 +150,8 @@ export class SearchResultsComponent {
   threshold: number = 130;
   scrollBuffer: number = 20;
   customHeader = CustomDatepickerHeaderComponent;
+  minSpendingPlanRange = 4000;
+  maxSpendingPlanRange = 18000;
 
   counterValueChangeFn(counterValue: number): void {
     console.log('Counter value changed to: ', counterValue);
@@ -176,4 +184,10 @@ export class SearchResultsComponent {
     today.setHours(0, 0, 0, 0); // Reset time for accurate comparison
     return date ? date >= today : false;
   };
+
+  // method to get minimum and maximum plan ranges
+  onPlanRangeChangeFn() {
+    console.log(`Min Value ${this.minSpendingPlanRange}`);
+    console.log(`Max Value ${this.maxSpendingPlanRange}`);
+  }
 }
