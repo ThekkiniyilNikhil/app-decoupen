@@ -1,19 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
 import { FormsModule } from '@angular/forms';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-search-results',
   imports: [
     CommonModule, SharedModule, NgxPaginationModule, 
     MatDatepickerModule, MatNativeDateModule, FormsModule,
-    MatSliderModule
+    MatSliderModule, MatFormFieldModule, MatSelectModule
   ],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss'
@@ -189,5 +191,45 @@ export class SearchResultsComponent {
   onPlanRangeChangeFn() {
     console.log(`Min Value ${this.minSpendingPlanRange}`);
     console.log(`Max Value ${this.maxSpendingPlanRange}`);
+  }
+
+  sortByOpts = [ 'User Rating: Highest First', 'Price: Lowest First', 'Price: Highest First' ];
+  selectedSortOpt = this.sortByOpts[0];
+
+  @ViewChild('filterSmallScrnContainer') filterSmallScrnContainer!: ElementRef;
+  @ViewChild('fullScrnHandler') fullScrnHandler!: ElementRef;
+  @ViewChild('backToNormlScrnArrw') backToNormlScrnArrw!: ElementRef;
+  touchStartY = 0;
+  touchEndY = 0;
+  // method to make filter container full screen in small devices
+  gotoFullScrnFn() {
+    this.filterSmallScrnContainer.nativeElement.style.height = '100%';
+    this.filterSmallScrnContainer.nativeElement.style.borderRadius = '0';
+    this.fullScrnHandler.nativeElement.style.display = 'none';
+    this.backToNormlScrnArrw.nativeElement.style.display = 'block';
+  }
+
+  // swipe events for making full screen
+  onTouchStart(event: TouchEvent) {
+    this.touchStartY = event.touches[0].clientY;
+  }
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndY = event.changedTouches[0].clientY;
+
+    if (this.touchStartY - this.touchEndY > 50) {
+      this.gotoFullScrnFn();
+    }
+  }
+
+  // show/hide filter panels in small devices
+  showFilterPanel = false;
+  openFilterPanelInSmFn() {
+    this.showFilterPanel = true;
+  }
+  hideFilterPanelFn() {
+    this.showFilterPanel = false;
+  }
+  cancelFilterActionFn() {
+    this.showFilterPanel = false;
   }
 }

@@ -92,7 +92,7 @@
         </div>
         <div class="ppty-found-blck">
             <h2 class="ppty-found-ttl">230 properties found in Trivandrum</h2>
-            <div class="sortby-blck">
+            <div class="sortby-blck visible-lg-flex">
                 <span class="sortby-txt">Sort by : </span>
                 <div class="sortby-opts-blck">
                     <div class="sortby-opts selected">
@@ -107,6 +107,20 @@
                         <span class="sortby">Price:&nbsp;</span>
                         <span class="sortby-value">Lowest First</span>
                     </div>
+                </div>
+            </div>
+            <div class="sortbt-blck-sm">
+                <div class="filter-btn" (click)="openFilterPanelInSmFn()">
+                    <div class="filter-icon"></div>
+                    <span>Filters</span>
+                </div>
+                <div class="sortby-btn-blck">
+                    <span>Sort by</span>
+                    <mat-select [(value)]="selectedSortOpt">
+                        @for (sort of sortByOpts; track sort) {
+                            <mat-option [value]="sort">{{sort}}</mat-option>
+                        }
+                    </mat-select>
                 </div>
             </div>
             <!-- PROPERTIES LISTS BLOCK -->
@@ -173,3 +187,85 @@
         </div>
      </div>
 </div>
+
+<!-- FILTER SECTION IN MOBILE DEVICES -->
+ <div class="filter-sm-outr-cntr" *ngIf="showFilterPanel">
+    <div class="filter-by-blck-sm filter-by-blck" #filterSmallScrnContainer>
+        <div class="fullscreen-handle" (click)="gotoFullScrnFn()" #fullScrnHandler 
+            (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+        </div>
+        <div class="back-arrw-to-nrml-scrn" #backToNormlScrnArrw (click)="hideFilterPanelFn()"></div>    
+        <h3 class="ttl-txt">Filter by</h3>
+        <!-- SPENDING PLANS BLOCK -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Your spending plans</h4>
+            <div class="price-rng-blck">
+                <span>2,000 INR</span>
+                <span>20,000 INR</span>
+            </div>
+            <mat-slider min="2000" max="20000" (input)="onPlanRangeChangeFn()">
+                <input [(ngModel)]="minSpendingPlanRange" matSliderStartThumb>
+                <input [(ngModel)]="maxSpendingPlanRange" matSliderEndThumb>
+            </mat-slider>
+        </ng-container>
+        <!-- STAY OPTIONS -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Stay Options</h4>
+            <ng-container *ngFor="let item of dummyStayOptions; let i = index; let isLast = last;">
+                <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                    <span class="cntnt-txt">{{ item }}</span>
+                    <input class="filter-item-chcbx" type="checkbox">
+                </div>
+            </ng-container>
+        </ng-container>
+        <!-- RATINGS -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Ratings</h4>
+            <ng-container *ngFor="let item of dummyStarRatings; let i = index; let isLast = last;">
+                <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                    <span class="cntnt-txt">{{ item }}</span>
+                    <input class="filter-item-chcbx" type="checkbox">
+                </div>
+            </ng-container>
+        </ng-container>
+        <!-- ROOM GOODIES -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Room Goodies</h4>
+            <ng-container *ngFor="let item of dummyRoomGoodies; let i = index; let isLast = last;">
+                <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                    <span class="cntnt-txt">{{ item }}</span>
+                    <input class="filter-item-chcbx" type="checkbox">
+                </div>
+            </ng-container>
+            <a href="" class="show-more-goodies-btn">Show more</a>
+        </ng-container>
+        <!-- BEDROOMS AND BATHROOMS COUNTER -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Bedrooms & bathrooms</h4>
+            <ng-container>
+                <div class="bed-bath-blck">
+                    <span class="cntnt-txt">Bedrooms</span>
+                    <app-increment-decrement-counter [counterValue]="4" (counterValueChange)="counterValueChangeFn($event)"></app-increment-decrement-counter>
+                </div>
+                <div class="bed-bath-blck">
+                    <span class="cntnt-txt">Bathrooms</span>
+                    <app-increment-decrement-counter [counterValue]="4" (counterValueChange)="counterValueChangeFn($event)"></app-increment-decrement-counter>
+                </div>
+            </ng-container>
+        </ng-container>
+        <!-- MEALS -->
+        <ng-container>
+            <h4 class="sub-ttl-txt">Meals</h4>
+            <ng-container *ngFor="let item of dummyMeals; let i = index; let isLast = last;">
+                <div class="filter-item" [class.mb-5px]="!isLast" [class.mb-0px]="isLast">
+                    <span class="cntnt-txt">{{ item }}</span>
+                    <input class="filter-item-chcbx" type="checkbox">
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+    <div class="filterby-sm-btns">
+        <button type="button" class="filterby-sm-cncl-btn" (click)="cancelFilterActionFn()">Cancel</button>
+        <button type="button" class="choos-room-btn filterby-sm-appl-btn">Apply</button>
+    </div>
+ </div>
