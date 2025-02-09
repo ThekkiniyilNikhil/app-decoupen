@@ -104,6 +104,54 @@
         margin: 0;
         color: #1f1f1f;
     }
+    .srch-sele-ttl {
+        font-family: "Plus Jakarta Sans", serif;
+        font-weight: 400;
+        color: #818181;
+        font-size: 13px;
+        margin: 0;
+        padding-top: 2px;
+        cursor: pointer;
+    }
+}
+.guests-counts-blck {
+    min-width: 340px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+    &:last-child {
+        border-bottom: 0;
+    }
+    .guests-count-cat-ttl {
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+        color: #1f1f1f;
+    }
+    .guests-count-range-ttl {
+        font-size: 14px;
+        color: #5f5f5f;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    ::ng-deep app-increment-decrement-counter {
+        .counter-container {
+            border: 0;
+            padding: 0;
+            .decrement,
+            .increment {
+                display: flex;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 1px solid #000;
+                margin: 0;
+            }
+        }
+    }
 }
 .srch-rslts-inner-contr {
     max-width: 1200px;

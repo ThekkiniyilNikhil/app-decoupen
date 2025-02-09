@@ -21,7 +21,21 @@
                 <p-datepicker [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" 
                     dateFormat="dd M" [minDate]="currentDay"></p-datepicker>
             </div>
-            <div class="guest-blck"></div>
+            <div class="guest-blck">
+                <p class="srch-top-ttl">Guests</p>
+                <p class="srch-sele-ttl" (click)="toggleGuestsPopOverFn($event)">2 Adults</p>
+                <p-popover #guestPopOver>
+                    @for (item of dummyGuestsSearchValues; track item) {
+                        <div class="guests-counts-blck">
+                            <div>
+                                <p class="guests-count-cat-ttl">{{ item?.category }}</p>
+                                <p class="guests-count-range-ttl">{{ item?.ageRange }}</p>
+                            </div>
+                            <app-increment-decrement-counter [counterValue]="item.defaultCount"></app-increment-decrement-counter>
+                        </div>
+                    }
+                </p-popover>
+            </div>
             <div class="srch-btn-blck"></div>
         </div>
     </div>

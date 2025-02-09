@@ -10,6 +10,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
 import { SharedModule } from '../../shared/shared.module';
 import { DatePicker } from 'primeng/datepicker';
+import { Popover, PopoverModule } from 'primeng/popover';
 
 @Component({
   selector: 'app-search-results',
@@ -17,7 +18,7 @@ import { DatePicker } from 'primeng/datepicker';
     CommonModule, SharedModule, NgxPaginationModule, 
     MatNativeDateModule, FormsModule,
     MatSliderModule, MatFormFieldModule, MatSelectModule,
-    DatePicker
+    DatePicker, PopoverModule
   ],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss',
@@ -270,4 +271,32 @@ export class SearchResultsComponent {
   // date range selector
   rangeDates: Date[] | undefined;
   currentDay: Date = new Date();
+
+  // mmethod to handle popover
+  @ViewChild('guestPopOver') guestPopOver!: Popover;
+  toggleGuestsPopOverFn(event: any) {
+    this.guestPopOver.toggle(event);
+  }
+  dummyGuestsSearchValues = [
+    {
+      category: 'Adults',
+      ageRange: 'Ages 13 or above',
+      defaultCount: 2
+    },
+    {
+      category: 'Adults',
+      ageRange: 'Ages 13 or above',
+      defaultCount: 0
+    },
+    {
+      category: 'Adults',
+      ageRange: 'Ages 13 or above',
+      defaultCount: 0
+    },
+    {
+      category: 'Adults',
+      ageRange: 'Ages 13 or above',
+      defaultCount: 0
+    }
+  ]
 }
