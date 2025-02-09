@@ -2,20 +2,22 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule, MatDateRangePicker } from '@angular/material/datepicker';
+import { MatDateRangePicker } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
 import { SharedModule } from '../../shared/shared.module';
+import { DatePicker } from 'primeng/datepicker';
 
 @Component({
   selector: 'app-search-results',
   imports: [
     CommonModule, SharedModule, NgxPaginationModule, 
-    MatDatepickerModule, MatNativeDateModule, FormsModule,
-    MatSliderModule, MatFormFieldModule, MatSelectModule
+    MatNativeDateModule, FormsModule,
+    MatSliderModule, MatFormFieldModule, MatSelectModule,
+    DatePicker
   ],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss',
@@ -264,17 +266,8 @@ export class SearchResultsComponent {
       this.endDate = `${selDate} ${selMonth}`;
     }
   }
-  // onStartDateChangeFn(date: any) {
-  //   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  //   const selDate = date.value.getDate() > 10 ? date.value.getDate() : `0${date.value.getDate()}`;
-  //   const selMonth = monthArr[date.value.getMonth()];
-  //   this.startDate = `${selDate} ${selMonth}`;
-  // }
 
-  // onEndDateChangeFn(date: any) {
-  //   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  //   const selDate = date.value.getDate() > 10 ? date.value.getDate() : `0${date.value.getDate()}`;
-  //   const selMonth = monthArr[date.value.getMonth()];
-  //   this.endDate = `${selDate} ${selMonth}`;
-  // }
+  // date range selector
+  rangeDates: Date[] | undefined;
+  currentDay: Date = new Date();
 }

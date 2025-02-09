@@ -18,12 +18,8 @@
             <div class="where-blck"></div>
             <div class="when-blck">
                 <p class="srch-top-ttl">When</p>
-                <mat-date-range-input [rangePicker]="picker">
-                    <input matStartDate placeholder="Start date" (click)="openDateRangePicker()">
-                    <input matEndDate placeholder="End date" (click)="openDateRangePicker()">
-                  </mat-date-range-input>
-                <mat-datepicker-toggle [for]="picker" style="display: none;"></mat-datepicker-toggle>
-                <mat-date-range-picker #picker [calendarHeaderComponent]="customHeader"></mat-date-range-picker>
+                <p-datepicker [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" 
+                    dateFormat="dd M" [minDate]="currentDay"></p-datepicker>
             </div>
             <div class="guest-blck"></div>
             <div class="srch-btn-blck"></div>
