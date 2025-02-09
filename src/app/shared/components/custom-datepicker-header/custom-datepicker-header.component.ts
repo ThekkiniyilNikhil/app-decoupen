@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -10,25 +11,33 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true
 })
 export class CustomDatepickerHeaderComponent {
-  constructor(public calendar: MatCalendar<Date>) {}
+  
+  currentMonthYear: string;
+  
+  constructor(
+    @Inject(MatCalendar) private calendar: MatCalendar<Date>,
+    private dateAdapter: DateAdapter<Date>
+  ) {
+    this.updateMonthYear();
+  }
 
+  updateMonthYear() {
+    const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const dateTimeStamp = this.calendar.activeDate;
+    const month = monthArr[dateTimeStamp.getMonth()];
+    const year = dateTimeStamp.getFullYear();
+    this.currentMonthYear = `${month} ${year}`;
+  }
 
   previousClicked(): void {
-    const activeDate = this.calendar.activeDate;
-    this.calendar.activeDate = new Date(
-      activeDate.getFullYear(),
-      activeDate.getMonth() - 1,
-      1
-    );
+    this.calendar.activeDate = this.dateAdapter.addCalendarMonths(this.calendar.activeDate, -1);
+    this.updateMonthYear();
   }
 
   nextClicked(): void {
-    const activeDate = this.calendar.activeDate;
-    this.calendar.activeDate = new Date(
-      activeDate.getFullYear(),
-      activeDate.getMonth() + 1,
-      1
-    );
+    this.calendar.activeDate = this.dateAdapter.addCalendarMonths(this.calendar.activeDate, 1);
+    this.updateMonthYear();
+
   }
 
   // Disable previous dates

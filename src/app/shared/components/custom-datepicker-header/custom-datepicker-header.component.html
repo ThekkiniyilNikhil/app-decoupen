@@ -2,8 +2,7 @@
 <div class="header-buttons">
     <!-- Previous Button -->
     <button
-      mat-icon-button
-      mat-calendar-previous-button
+      class="cal-nav-btn"
       aria-label="Previous month"
       (click)="previousClicked()"
       [disabled]="isPreviousDateDisabled()"
@@ -12,12 +11,11 @@
     </button>
 
     <!-- Current Period -->
-    <!-- <div class="current-period">{{ calendar?.activeDate | date: 'MMMM yyyy' }}</div> -->
+    <div class="current-period">{{ currentMonthYear }}</div>
 
     <!-- Next Button -->
     <button
-      mat-icon-button
-      mat-calendar-next-button
+      class="cal-nav-btn"
       aria-label="Next month"
       (click)="nextClicked()"
     >

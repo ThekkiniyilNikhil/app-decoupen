@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
 import { FormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule, MatDateRangePicker } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CustomDatepickerHeaderComponent } from '../../shared/components/custom-datepicker-header/custom-datepicker-header.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-search-results',
@@ -18,9 +18,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSliderModule, MatFormFieldModule, MatSelectModule
   ],
   templateUrl: './search-results.component.html',
-  styleUrl: './search-results.component.scss'
+  styleUrl: './search-results.component.scss',
+  standalone: true,
+  providers: [DatePipe] 
 })
 export class SearchResultsComponent {
+  constructor(private datePipe: DatePipe) {
+
+  }
   dummyStayOptions = [ 'Resorts(10)', 'Hotels(8)', 'Bed and breakfasts(10)', 'Homestays(5)' ];
   dummyStarRatings = [ '5 star', '4 star', '3 star', '2 star', '1 star' ];
   dummyRoomGoodies = [ 'Free WiFi', 'Breakfast included', 'Free parking', 'Pet friendly' ];
@@ -232,4 +237,44 @@ export class SearchResultsComponent {
   cancelFilterActionFn() {
     this.showFilterPanel = false;
   }
+
+  // open date range picker
+  @ViewChild('picker') picker: MatDateRangePicker<any>;
+  startDate: any;
+  endDate: any;
+  openDateRangePicker() {
+    this.picker.open();
+  }
+
+  onSelectedChange(selectedRange: any) {console.log(selectedRange.start)
+    // Format the start and end date immediately upon selection
+    if (selectedRange && selectedRange.start && selectedRange.end) {
+      this.startDate = this.datePipe.transform(selectedRange.start, 'dd MMM');
+      this.endDate = this.datePipe.transform(selectedRange.end, 'dd MMM');
+    }
+  }
+
+  onDateChangeFn(date: any, type: string) {
+    const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const selDate = date.value.getDate() > 10 ? date.value.getDate() : `0${date.value.getDate()}`;
+    const selMonth = monthArr[date.value.getMonth()];
+    if(type === 'START') {
+      this.startDate = `${selDate} ${selMonth}`;console.log(this.startDate)
+    } else if (type === 'END') {
+      this.endDate = `${selDate} ${selMonth}`;
+    }
+  }
+  // onStartDateChangeFn(date: any) {
+  //   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  //   const selDate = date.value.getDate() > 10 ? date.value.getDate() : `0${date.value.getDate()}`;
+  //   const selMonth = monthArr[date.value.getMonth()];
+  //   this.startDate = `${selDate} ${selMonth}`;
+  // }
+
+  // onEndDateChangeFn(date: any) {
+  //   const monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  //   const selDate = date.value.getDate() > 10 ? date.value.getDate() : `0${date.value.getDate()}`;
+  //   const selMonth = monthArr[date.value.getMonth()];
+  //   this.endDate = `${selDate} ${selMonth}`;
+  // }
 }

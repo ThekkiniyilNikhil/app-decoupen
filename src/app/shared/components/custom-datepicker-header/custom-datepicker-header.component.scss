@@ -6,8 +6,21 @@
     font-family: "Plus Jakarta Sans", serif;
     font-weight: bold;
     margin-top: 0;
-}.header-buttons {
+}
+.header-buttons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+}
+.current-period {
+    font-family: "Plus Jakarta Sans", serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1f1f1f;
+}
+.cal-nav-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
 }
