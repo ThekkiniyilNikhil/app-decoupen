@@ -17,5 +17,9 @@ export const routes: Routes = [
     {
         path: 'search-results',
         loadComponent: () => import('./features/search-results/search-results.component').then(m => m.SearchResultsComponent)
+    },
+    {
+        path: 'property-details',
+        loadComponent: () => import('./features/property-details/property-details.component').then(m => m.PropertyDetailsComponent)
     }
 ];

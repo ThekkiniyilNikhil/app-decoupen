@@ -26,9 +26,8 @@ import { Popover, PopoverModule } from 'primeng/popover';
   providers: [DatePipe] 
 })
 export class SearchResultsComponent {
-  constructor(private datePipe: DatePipe) {
+  constructor(private datePipe: DatePipe) {}
 
-  }
   dummyStayOptions = [ 'Resorts(10)', 'Hotels(8)', 'Bed and breakfasts(10)', 'Homestays(5)' ];
   dummyStarRatings = [ '5 star', '4 star', '3 star', '2 star', '1 star' ];
   dummyRoomGoodies = [ 'Free WiFi', 'Breakfast included', 'Free parking', 'Pet friendly' ];

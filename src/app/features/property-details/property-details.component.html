@@ -1,0 +1,58 @@
+<div class="ppty-det-outer-cntr">
+    <div class="ppty-det-inner-cntr">
+        <div class="ppty-left-cntr">
+            <h3 class="ppty-name">Avoki Resorts</h3>
+            <div class="str-rtng-blck">
+                <div class="str-ico"></div>
+                <span class="str-rate">4.86 (101)</span>
+            </div>
+            <div class="loc-addrs-blck">
+                <span>Plot No. 1 Sector 44, Near HUDA Metro, Gurugram, Delhi N.C.R, 122 004</span>
+                <div class="view-loc-mp-blck">
+                    <div class="map-ico"></div>
+                    <p>View in map</p>
+                </div>
+            </div>
+            <div class="seperator-line"></div>
+            <h3 class="ppty-sub-ttle">Amenities</h3>
+            <div class="amenities-blck">
+                @for (item of dummyAmenetiesArr; track item) {
+                    <div class="amenity-item">
+                        <img [src]="item?.imgUrl" [alt]="item?.name">
+                        {{item?.name}}
+                    </div>
+                }
+            </div>
+            <button type="button" class="view-more-btn">View more</button>
+            <div class="seperator-line"></div>
+            <h3 class="ppty-sub-ttle">Guest Details</h3>
+            <div class="guest-det-block">
+                <div class="chek-in-out-blck">
+                    <div class="check-ico check-in"></div>
+                    <span>24 Jan, Wed</span>
+                    <div class="check-ico check-out"></div>
+                    <span>30 Jan, Wed</span>
+                </div>
+                <div class="guest-count-blck">
+                    <span>2 Adults</span>
+                    <span>.</span>
+                    <span>1 Child</span>
+                    <span>.</span>
+                    <span>1 Infant</span>
+                    <span>.</span>
+                    <span>1 Room</span>
+                </div>
+            </div>
+            <div class="seperator-line"></div>
+            <h3 class="ppty-sub-ttle">Select Your Room</h3>
+            <div class="rooms-avail-blck">
+                <img class="rooms-avail-img" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/516a34e19c15231266508ef73616e116a4680878049fa7e834eb2f15d8ecc64f?placeholderIfAbsent=true&apiKey=86fa706afe8f4327b17bc27978eed39f">
+                <div class="room-avail-det-blck">
+                    <h3 class="section-left room-name">Deluxe Jumbo Rooms</h3>
+                    <div class="sectio-right rooms-avail-cnt">2 rooms available</div>
+                </div>
+            </div>
+        </div>
+        <div class="ppty-right-cntr">cvcv</div>
+    </div>
+</div>
