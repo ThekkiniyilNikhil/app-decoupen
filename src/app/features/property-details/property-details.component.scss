@@ -1,12 +1,22 @@
 .ppty-det-outer-cntr {
     margin-top: 84px;
+    margin-bottom: 64px;
 }
 .ppty-det-inner-cntr {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 330px;
+    grid-template-columns: 1fr 350px;
     column-gap: 40px;
+}
+.ppty-left-cntr {
+    grid-column: 1/2;
+}
+.ppty-right-cntr {
+    grid-column: 2/-1;
+}
+.ppty-bot-cntr {
+    grid-column: 1/-1;
 }
 .ppty-name {
     font-size: 34px;
@@ -152,13 +162,17 @@
     display: grid;
     grid-template-columns: 210px 1fr;
     column-gap: 24px;
+    margin-bottom: 24px;
+    &:last-child {
+        margin-bottom: 0;
+    }
     .rooms-avail-img {
         max-width: 100%;
     }
     .room-avail-det-blck {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: max-content;
+        grid-auto-rows: 38px 38px 38px 1fr;
     }
     .section-left {
         grid-column: 1/2;
@@ -171,6 +185,7 @@
         font-size: 20px;
         color: #1f1f1f;
         font-weight: 700;
+        align-self: center;
     }
     .rooms-avail-cnt {
         padding: 10px 16px;
@@ -181,6 +196,233 @@
         font-weight: 600;
         justify-self: flex-end;
     }
+    .bed-typ-blck {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 15px;
+        color: #5f5f5f;
+        .bed-ico {
+            width: 17px;
+            height: 15px;
+            background: url('/assets/images/sprite-png.png') no-repeat -301px -122px;
+            background-size: 496px 258px;
+        }
+    }
+    .bed-duration {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f5f5f;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+    .guest-cnt-blck {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        color: #5f5f5f;
+        margin-top: 15px;
+        .guest-user-ico {
+            width: 14px;
+            height: 15px;
+            background: url('/assets/images/sprite-png.png') no-repeat -265px -123px;
+            background-size: 496px 258px;
+        }
+    }
+    .price-det-blck {
+        justify-self: flex-end;
+        align-self: center;
+        margin-top: 15px;
+        .strik-off {
+            color: #5f5f5f;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: line-through;
+            margin-right: 4px;
+        }
+        .exact-price {
+            color: #1f1f1f;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+    .more-det-btn {
+        align-self: flex-end;
+    }
 }
-
-
+::ng-deep .room-count-hndlr-blck {
+    justify-self: flex-end;
+    align-self: flex-end;
+    app-increment-decrement-counter {
+        .counter-container {
+            width: auto;
+            height: auto;
+            padding: 0;
+            border: 0;
+        }
+        .decrement,
+        .increment {
+            width: 46px;
+            height: 46px;
+            line-height: 38px;
+            text-align: center;
+            border: 1px solid #3d3d3d;
+            border-radius: 50%;
+            font-size: 24px;
+        }
+        .value {
+            font-size: 24px !important;
+            font-weight: 700;
+            color: #000;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.hotl-habit-blck {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    .left {
+        grid-column: 1/2;
+    }
+    .right {
+        grid-column: 2/-1;
+    }
+    .habits {
+        display: flex;
+        align-items: baseline;
+        column-gap: 15px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #5f5f5f;
+        margin-bottom: 36px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .habit-ico {
+        width: 20px;
+        height: 21px;
+    }
+    .chek-in {
+        background: url('/assets/images/sprite-png.png') no-repeat -190px -121px;
+        background-size: 496px 258px;
+    }
+    .chek-out {
+        background: url('/assets/images/sprite-png.png') no-repeat -230px -121px;
+        background-size: 496px 258px;
+    }
+}
+.ppty-treats-to-users-blck {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    align-items: flex-start;
+    column-gap: 15px;
+    margin-bottom: 20px;
+    .treat-check-ico {
+        width: 28px;
+        height: 25px;
+        background: url('/assets/images/sprite-png.png') no-repeat -338px -120px;
+	    background-size: 496px 258px;
+    }
+    span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #4d4d4d;
+    }
+}
+.cancel-policy-msg {
+    font-size: 16px;
+    color: #4d4d4d;
+    font-weight: 400;
+    line-height: 140%;
+}
+.room-smry-blck {
+    width: 100%;
+    height: auto;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(187, 187, 187, 0.25);
+    box-shadow: 0 2px 20px 0 rgba(187, 187, 187, 0.25);
+    h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #000;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .room-price-det {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &.offer-appld {
+            color: #139C41;
+        }
+    }
+    .room-price-det .room {
+        font-weight: 400;
+        flex: 1;
+    }
+    .room-price-det .price {
+        font-weight: 700;
+    }
+    .room-price-total-blck {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 10px;
+    }
+    .totl-txt {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+    }
+    .grnd-totl-blck {
+        justify-self: flex-end;
+        .totl-price {
+            margin: 0;
+            text-align: right;
+            .strk-off {
+                text-decoration: line-through;
+                color: #5f5f5f;
+                font-size: 14px;
+                font-weight: 500;
+                margin-right: 4px;
+            }
+            .grnd-totl {
+                font-size: 18px;
+                font-weight: 700;
+                color: #1f1f1f;
+            }
+        }
+        .tax-fees-blck {
+            font-size: 13px;
+            font-weight: 400;
+            color: #5f5f5f;
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+    }
+    .apply-more-discnt-btn {
+        width: 100%;
+        height: 50px;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: "Plus Jakarta Sans", serif;
+        color: #fff;
+        border-radius: 4px;
+        border: 0;
+        background: linear-gradient(0deg, #E6132F 0%, #EC4C1D 100%);
+        margin-top: 32px;
+        cursor: pointer;
+    }
+}

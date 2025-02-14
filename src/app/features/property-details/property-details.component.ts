@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { IncrementDecrementCounterComponent } from '../../shared/components/increment-decrement-counter/increment-decrement-counter.component';
 
 @Component({
   selector: 'app-property-details',
-  imports: [],
+  imports: [IncrementDecrementCounterComponent],
   templateUrl: './property-details.component.html',
   styleUrl: './property-details.component.scss'
 })
