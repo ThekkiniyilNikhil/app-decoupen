@@ -1,0 +1,58 @@
+<div class="select-rooms-cntr">
+    <div class="ttl-blck">
+        <div class="bck-arrw" (click)="closeSelRoomCntrFn()"></div>
+        <div>
+            <h3 class="ppty-ttl">Avoki Resorts</h3>
+            <p class="gust-det">
+                <span>6 Guests</span>
+                <span>.</span>
+                <span>2 Nights</span>
+                <span>.</span>
+                <span>24 Jan - 26 Jan</span>
+            </p>
+        </div>
+    </div>
+    <div class="rooms-lists-cntr">
+        <h3 class="sel-rm-ttl">Select your Room</h3>
+        <ng-container>
+            <div class="rooms-list-blck">
+                <div class="room-det-blck">
+                    <div class="room-det-img">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/516a34e19c15231266508ef73616e116a4680878049fa7e834eb2f15d8ecc64f?placeholderIfAbsent=true&apiKey=86fa706afe8f4327b17bc27978eed39f">
+                    </div>
+                    <div>
+                        <h4 class="room-typ-name">Deluxe Double Room</h4>
+                        <div class="room-typ-det">
+                            <div class="ico"></div>
+                            <span>1 extra-large double bed  </span>
+                        </div>
+                        <div class="room-typ-det">
+                            <div class="ico"></div>
+                            <span>Max. 4  guests</span>
+                        </div>
+                    </div>
+                    <div class="rooms-avail green">2 rooms available</div>
+                    <a class="more-det-btn">More Details</a>
+                </div>
+                <div class="room-price-det-blck">
+                    <div>
+                        <p class="price">&#8377;4000 <span class="strike-off">&#8377;4000</span></p>
+                        <p class="stay-dur">Per night</p>
+                    </div>
+                    <app-increment-decrement-counter [counterValue]="2"></app-increment-decrement-counter>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="apply-more-dscnt-blck">
+    <div class="apply-more-ttl-blck">
+        <h3 class="ttl-txt">Total</h3>
+        <p class="sub-ttl-txt">(2 Room 2 nights)</p>
+    </div>
+    <div class="apply-more-price-blck">
+        <h3 class="ttl-txt"><span class="apply-more-strike-off">&#8377;12000</span>&#8377;10000</h3>
+        <p class="sub-ttl-txt dscnt-text">+&#8377;500 in Taxes and Fees</p>
+    </div>
+    <button type="button">Apply More Discounts</button>
+</div>

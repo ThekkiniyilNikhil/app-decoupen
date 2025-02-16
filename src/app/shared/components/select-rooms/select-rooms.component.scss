@@ -1,0 +1,207 @@
+.select-rooms-cntr {
+    height: 100%;
+}
+.ttl-blck {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    height: 78px;
+    padding: 0 20px;
+    border-bottom: 1px solid #f1f1f1;
+    box-shadow: 0 2px 12px 0 rgba(211, 211, 211, 0.25);
+}
+.bck-arrw {
+    background: url('/assets/images/sprite-png.png') no-repeat -195px -160px;
+    background-size: 496px 258px;
+    width: 20px;
+    height: 16px;
+}
+.ppty-ttl {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.gust-det {
+    font-size: 14px;
+    font-weight: 400;
+    color: #5f5f5f;
+    margin: 0;
+    display: flex;
+    column-gap: 5px;
+}
+.rooms-lists-cntr {
+    padding: 20px;
+}
+.sel-rm-ttl {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f1f1f;
+}
+.rooms-list-blck {
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 12px 0 rgba(204, 204, 204, 0.25);
+    overflow: hidden;
+}
+.room-det-blck {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    row-gap: 14px;
+    .room-det-img {
+        width: 90px;
+        grid-column: 1/2;
+        img {
+            max-width: 100%;
+        }
+    }
+    .room-typ-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f1f1f;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    .room-typ-det {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-bottom: 6px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .ico {
+            width: 17px;
+            height: 16px;
+            background: url('/assets/images/sprite-png.png') no-repeat -301px -122px;
+            background-size: 496px 258px;
+        }
+        span {
+            font-size: 13px;
+            font-weight: 500;
+            color: #5f5f5f;
+        }
+    }
+    .rooms-avail {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 2px;
+        &.green {
+            color: #0AA31C;
+            background-color: #EDFBEF;
+        }
+    }
+    .more-det-btn {
+        font-size: 14px;
+        font-weight: 600;
+        justify-self: flex-end;
+        align-self: center;
+        color: #F0692A;
+        text-decoration: underline;
+    }
+}
+.room-price-det-blck {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: #FFF7F3;
+    .price {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1f1f1f; 
+    }
+    .strike-off {
+        font-size: 13px;
+        font-weight: 600;
+        color: #5f5f5f;
+        margin-left: 2px;
+        text-decoration: line-through;
+    }
+    .stay-dur {
+        font-size: 13px;
+        font-weight: 500;
+        color: #5f5f5f;
+        margin-bottom: 0;
+        margin-top: 2px;
+    }
+}
+:host ::ng-deep app-increment-decrement-counter {
+    .counter-container {
+        border: 0;
+        padding: 0;
+        .decrement,
+        .increment {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #3d3d3d;
+            border-radius: 100%;
+            margin-bottom: 0 !important;
+            text-align: center;
+        }
+    }
+}
+.apply-more-dscnt-blck {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 14px;
+    padding: 16px 20px;
+    border-top: 1px solid #ebebeb;
+    box-shadow: 0 -1px 24px 0 rgba(204, 204, 204, 0.25);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    button {
+        grid-column: 1/-1;
+        width: 100%;
+        height: 50px;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: "Plus Jakarta Sans", serif;
+        color: #fff;
+        border-radius: 4px;
+        border: 0;
+        background: linear-gradient(0deg, #E6132F 0%, #EC4C1D 100%);
+        cursor: pointer;
+    }
+    .ttl-txt {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1f1f1f;
+        margin-bottom: 4px;
+        margin-top: 0;
+    }
+    .sub-ttl-txt {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 600;
+        color: #5f5f5f;
+    }
+    .apply-more-ttl-blck {
+        grid-column: 1/2;
+    }
+    .apply-more-price-blck {
+        grid-column: 2/-1;
+        .ttl-txt {
+            text-align: right;
+        }
+        .sub-ttl-txt {
+            text-align: right;
+            font-weight: 400;
+        }
+    }
+    .apply-more-strike-off {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f5f5f;
+        margin-right: 4px;
+    }
+}

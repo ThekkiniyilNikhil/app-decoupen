@@ -1,4 +1,24 @@
 <div class="ppty-det-outer-cntr">
+    <!-- PROPERTY IMAGE GALLERY, ONLY IN LARGE SCREEN -->
+    <div class="ppty-images-blck">
+        <ng-container *ngFor="let image of sliderImagestoDisplay; let index = index; let isFirst = first;">
+            <div class="ppty-img" [class]="'ppty-img-'+index">
+                <img [src]="image" [alt]="image">
+                <div class="show-more-blck" *ngIf="index == 4">+{{moreImgsCount}} more</div>
+            </div>
+        </ng-container>
+    </div>
+    <!-- PROPERTY IMAGE SLIDER IN SMALL SCREEN -->
+     <div class="ppty-images-carousel-blck">
+        <p-carousel [value]="sliderSmImagePlaceholders" [numVisible]="1" [circular]="true" [autoplayInterval]="3000" [showNavigators]="false">
+            <ng-template pTemplate="item" let-image>
+                <img [src]="image" alt="roomImg">
+            </ng-template>
+        </p-carousel>
+        <div class="img-carouel-tbumb-blck">
+            <span>+{{ sliderSmImagePlaceholders.length - 1 }}</span>
+        </div>
+     </div>
     <div class="ppty-det-inner-cntr">
         <div class="ppty-left-cntr">
             <h3 class="ppty-name">Avoki Resorts</h3>
@@ -23,15 +43,20 @@
                     </div>
                 }
             </div>
-            <button type="button" class="view-more-btn">View more</button>
-            <div class="seperator-line"></div>
-            <h3 class="ppty-sub-ttle">Guest Details</h3>
-            <div class="guest-det-block">
+            <button type="button" class="view-more-btn" (click)="openViewMoreAmenitiesModalFn()">View more</button>
+            <div class="seperator-line hide-sm"></div>
+            <h3 class="ppty-sub-ttle hide-sm">Guest Details</h3>
+            <div class="guest-det-block hide-sm">
                 <div class="chek-in-out-blck">
-                    <div class="check-ico check-in"></div>
-                    <span>24 Jan, Wed</span>
-                    <div class="check-ico check-out"></div>
-                    <span>30 Jan, Wed</span>
+                    <div class="chek-in-out-wrpr">
+                        <div class="check-ico check-in"></div>
+                        <span>24 Jan, Wed</span>
+                    </div>
+                    <div class="chek-in-out-wrpr">
+                        <div class="check-ico check-out"></div>
+                        <span>30 Jan, Wed</span>
+                    </div>
+                    
                 </div>
                 <div class="guest-count-blck">
                     <span>2 Adults</span>
@@ -44,8 +69,8 @@
                 </div>
             </div>
             <div class="seperator-line"></div>
-            <h3 class="ppty-sub-ttle">Select Your Room</h3>
-            <div class="rooms-avail-blck">
+            <h3 class="ppty-sub-ttle hide-sm">Select Your Room</h3>
+            <div class="rooms-avail-blck hide-sm">
                 <img class="rooms-avail-img" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/516a34e19c15231266508ef73616e116a4680878049fa7e834eb2f15d8ecc64f?placeholderIfAbsent=true&apiKey=86fa706afe8f4327b17bc27978eed39f">
                 <div class="room-avail-det-blck">
                     <h3 class="section-left room-name">Deluxe Jumbo Rooms</h3>
@@ -64,14 +89,14 @@
                         <span class="exact-price">&#8377;5400</span>
                     </div>
                     <div class="section-left more-det-btn">
-                        <button type="button" class="view-more-btn">More Details</button>
+                        <button type="button" class="view-more-btn" (click)="openMoreSelectRoomDetailsModalFn()">More Details</button>
                     </div>
                     <div class="section-right room-count-hndlr-blck">
                         <app-increment-decrement-counter [counterValue]="2"></app-increment-decrement-counter>
                     </div>
                 </div>
             </div>
-            <div class="rooms-avail-blck">
+            <div class="rooms-avail-blck hide-sm">
                 <img class="rooms-avail-img" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/516a34e19c15231266508ef73616e116a4680878049fa7e834eb2f15d8ecc64f?placeholderIfAbsent=true&apiKey=86fa706afe8f4327b17bc27978eed39f">
                 <div class="room-avail-det-blck">
                     <h3 class="section-left room-name">Deluxe Jumbo Rooms</h3>
@@ -90,14 +115,14 @@
                         <span class="exact-price">&#8377;5400</span>
                     </div>
                     <div class="section-left more-det-btn">
-                        <button type="button" class="view-more-btn">More Details</button>
+                        <button type="button" class="view-more-btn" (click)="openMoreSelectRoomDetailsModalFn()">More Details</button>
                     </div>
                     <div class="section-right room-count-hndlr-blck">
                         <app-increment-decrement-counter [counterValue]="2"></app-increment-decrement-counter>
                     </div>
                 </div>
             </div>
-            <div class="rooms-avail-blck">
+            <div class="rooms-avail-blck hide-sm">
                 <img class="rooms-avail-img" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/516a34e19c15231266508ef73616e116a4680878049fa7e834eb2f15d8ecc64f?placeholderIfAbsent=true&apiKey=86fa706afe8f4327b17bc27978eed39f">
                 <div class="room-avail-det-blck">
                     <h3 class="section-left room-name">Deluxe Jumbo Rooms</h3>
@@ -116,14 +141,14 @@
                         <span class="exact-price">&#8377;5400</span>
                     </div>
                     <div class="section-left more-det-btn">
-                        <button type="button" class="view-more-btn">More Details</button>
+                        <button type="button" class="view-more-btn" (click)="openMoreSelectRoomDetailsModalFn()">More Details</button>
                     </div>
                     <div class="section-right room-count-hndlr-blck">
                         <app-increment-decrement-counter [counterValue]="2"></app-increment-decrement-counter>
                     </div>
                 </div>
             </div>
-            <div class="seperator-line"></div>
+            <div class="seperator-line hide-sm"></div>
             <h3 class="ppty-sub-ttle">Our Hotel Habits</h3>
             <div class="hotl-habit-blck">
                 <div class="left">
@@ -177,7 +202,7 @@
                         <p class="tax-fees-blck">+&#8377;500 in Taxes and Fees</p>
                     </div>
                 </div>
-                <button type="button" class="apply-more-discnt-btn">Apply More Discounts</button>
+                <button type="button" class="sbmt-or-btn apply-more-discnt-btn">Apply More Discounts</button>
             </div>
         </div>
         <div class="ppty-bot-cntr">
@@ -202,3 +227,31 @@
         </div>
     </div>
 </div>
+
+<!-- SELECT ROOM BUTTON ONLY IN SMALL DEVICES -->
+<div class="sel-room-bot-btn-blck">
+    <div class="gust-chckin-det-blck">
+        <span>6 Guests</span>
+        <span>.</span>
+        <span>2 Nights</span>
+        <span>.</span>
+        <span>24 Jan - 26 Jan</span>
+    </div>
+    <button type="button" class="sbmt-or-btn" (click)="openRoomsAvailbleSmFn()">Select Room</button>
+</div>
+
+<ng-container *ngIf="isSmallDevices">
+    <div class="bottom-sheet-modal" [class.show-cntr]="showRoomsInSmScreen">
+        <app-select-rooms (backArrowClicked)="closeSelectRoomInSmFn()"></app-select-rooms>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="isSmallDevices">
+    <div class="bottom-sheet-modal ameneties-bottom-modal" [ngClass]="{'show-cntr': showMoreAmenetiesInSmScreen}">
+        <app-more-ameneties [amenetiesList]="dummyMoreAmenetiesArr" [openFromComponent]="true"></app-more-ameneties>
+    </div>
+</ng-container>
+<!-- TRANSPARENT OVRLAY -->
+<div class="transparent-overlay-cntr" *ngIf="showMoreAmenetiesInSmScreen"></div>
+
+

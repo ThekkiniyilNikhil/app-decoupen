@@ -1,0 +1,159 @@
+.modal-outr {
+    padding: 28px;
+}
+.modal-ttl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        font-size: 20px;
+        margin: 0;
+        font-weight: 600;
+        color: #1f1f1f;
+    }
+    .close-btn-ico {
+        width: 13px;
+        height: 13px;
+        background: url('/assets/images/sprite-png.png') no-repeat -380px -124px;
+	    background-size: 496px 258px;
+        cursor: pointer;
+    }
+}
+.room-all-det-cntr {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+    column-gap: 20px;
+    margin-top: 24px;
+}
+.room-imgs-slidr {
+    width: 240px;
+    height: 115px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.det-one-blck {
+    grid-column: 1/2;
+    margin-bottom: 20px;
+}
+.det-two-blck {
+    grid-column: 2/3;
+}
+.det-three-blck {
+    grid-column: 3/4;
+}
+.room-spcl-blck {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 12px;
+    span {
+        font-size: 13px;
+        color: #5f5f5f;
+        font-weight: 400;
+    }
+}
+.extra-bed {
+    width: 17px;
+    height: 15px;
+    background: url('/assets/images/sprite-png.png') no-repeat -301px -122px;
+    background-size: 496px 258px;
+}
+.user-ico {
+    width: 14px;
+    height: 15px;
+    background: url('/assets/images/sprite-png.png') no-repeat -265px -123px;
+    background-size: 496px 258px;
+}
+.lake-vw-ico {
+    width: 12px;
+    height: 12px;
+    background: url('/assets/images/sprite-png.png') no-repeat -446px -125px;
+    background-size: 496px 258px;
+}
+.sq-ft-ico {
+    width: 12px;
+    height: 12px;
+    background: url('/assets/images/sprite-png.png') no-repeat -413px -125px;
+    background-size: 496px 258px;
+}
+.room-det-ttl {
+    font-weight: 700;
+    font-size: 14px;
+    color: #1f1f1f;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.room-det-info {
+    font-weight: 400;
+    font-size: 13px;
+    color: #5f5f5f;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.mt-20px {
+    margin-top: 20px;
+}
+.close-btn {
+    grid-column: 1/-1;
+    justify-self: flex-end;
+    width: 120px;
+    height: 50px;
+    color: #1f1f1f;
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid #1f1f1f;
+    border-radius: 6px;
+    background-color: transparent;
+    font-family: "Plus Jakarta Sans", serif;
+    cursor: pointer;
+}
+::ng-deep .room-imgs-slidr {
+    p-carousel {
+        width: 100%;
+        .p-carousel.p-component.p-carousel-horizontal {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            .p-carousel-content-container {
+                width: 100%;
+                position: relative;
+                .p-carousel-viewport {
+                    width: 100%;
+                    .p-carousel-item-list {
+                        .p-carousel-item {
+                            border-radius: 4px;
+                            img {
+                                width: 100%;
+                                height: 110px;
+                                object-fit: cover;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+                .p-carousel-indicator-list {
+                    padding: 0;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10px;
+                    transform: translateX(-50%);
+                    .p-carousel-indicator {
+                        .p-carousel-indicator-button {
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 100%;
+                            background-color: rgba(255, 255, 255, 0.4);
+                        }
+                        &.p-carousel-indicator-active {
+                            .p-carousel-indicator-button {
+                                width: 6px;
+                                height: 6px;
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

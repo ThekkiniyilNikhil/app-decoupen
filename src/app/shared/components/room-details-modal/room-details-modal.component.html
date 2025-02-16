@@ -1,0 +1,56 @@
+<div class="modal-outr">
+    <div class="modal-ttl">
+        <h3>Deluxe Double Room</h3>
+        <div class="close-btn-ico" (click)="closeModalFn()"></div>
+    </div>
+    <div class="room-all-det-cntr">
+        <div class="det-one-blck">
+            <div class="room-imgs-slidr">
+                <p-carousel [value]="roomSliderImagePlaceholders" [numVisible]="1" [numScroll]="1" [circular]="false" [autoplayInterval]="3000" [showNavigators]="false">
+                    <ng-template let-room #item>
+                        <img [src]="room" alt="room">
+                    </ng-template>
+                </p-carousel>
+            </div>
+            <div class="room-spcl-blck">
+                <div class="extra-bed"></div>
+                <span>1 extra-large double bed</span>
+            </div>
+            <div class="room-spcl-blck">
+                <div class="user-ico"></div>
+                <span>Max. 3  guests</span>
+            </div>
+            <div class="room-spcl-blck">
+                <div class="lake-vw-ico"></div>
+                <span>Lake View</span>
+            </div>
+            <div class="room-spcl-blck">
+                <div class="sq-ft-ico"></div>
+                <span>200 sq.ft</span>
+            </div>
+        </div>
+        <div class="det-two-blck">
+            <h4 class="room-det-ttl">Popular with Guests</h4>
+            <p class="room-det-info">Check-in: 12:00 pm – 11:00 pm</p>
+            <p class="room-det-info">Checkout before 11:00 am</p>
+            <p class="room-det-info">Smoking allowed</p>
+            <p class="room-det-info">5 guests maximum</p>
+            <p class="room-det-info">Pets are not allowed</p>
+            <h4 class="room-det-ttl mt-20px">Safety and Security</h4>
+            <p class="room-det-info">Check-in: 12:00 pm – 11:00 pm</p>
+            <p class="room-det-info">Smoking Allowed</p>
+        </div>
+        <div class="det-three-blck">
+            <h4 class="room-det-ttl">Popular with Guests</h4>
+            <p class="room-det-info">Check-in: 12:00 pm – 11:00 pm</p>
+            <p class="room-det-info">Checkout before 11:00 am</p>
+            <p class="room-det-info">Smoking allowed</p>
+            <p class="room-det-info">5 guests maximum</p>
+            <p class="room-det-info">Pets are not allowed</p>
+            <h4 class="room-det-ttl mt-20px">Safety and Security</h4>
+            <p class="room-det-info">Check-in: 12:00 pm – 11:00 pm</p>
+            <p class="room-det-info">Smoking Allowed</p>
+        </div>
+        <button class="close-btn" (click)="closeModalFn()">Close</button>
+    </div>
+</div>

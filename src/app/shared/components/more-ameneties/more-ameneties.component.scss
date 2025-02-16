@@ -1,0 +1,94 @@
+.modal-cntr {
+    padding: 28px;
+    &.small-scrn-wrpr {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+}
+.modal-ttl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        font-size: 20px;
+        margin: 0;
+        font-weight: 600;
+        color: #1f1f1f;
+    }
+    .close-btn {
+        width: 13px;
+        height: 13px;
+        background: url('/assets/images/sprite-png.png') no-repeat -380px -124px;
+	    background-size: 496px 258px;
+        cursor: pointer;
+    }
+}
+.modal-contents {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.modal-cont-category {
+    color: #1f1f1f;
+    h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+    }
+    p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+.close-modal-btn {
+    width: 120px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: "Plus Jakarta Sans", serif;
+    grid-column: 1/-1;
+    justify-self: flex-end;
+    background: transparent;
+    border: 1px solid #1f1f1f;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.modal-cntr.small-scrn-wrpr {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    .close-btn,
+    .close-modal-btn {
+        display: none;
+    }
+    .modal-cont-category {
+        grid-column: 1/-1;
+    }
+}
+.ameneties-sm-back-btn-blck {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid #ebebeb;
+    background-color: #fff;
+    box-shadow: 0 -1px 24px 0 rgba(185, 185, 185, 0.25);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    button {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1f1f1f;
+        background-color: transparent;
+        border-radius: 6px;
+        border: 1px solid #1f1f1f;
+    }
+}
+@media screen and (max-width: 767px) {
+    .ameneties-sm-back-btn-blck {
+        display: block;
+    }
+}

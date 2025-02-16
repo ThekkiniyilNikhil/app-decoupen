@@ -1,0 +1,16 @@
+<div class="modal-cntr" [class.small-scrn-wrpr]="openFromComponent">
+    <div class="modal-ttl">
+        <h3>Amenities</h3>
+        <div class="close-btn" (click)="closeModalFn()"></div>
+    </div>
+    <div class="modal-contents">
+        <div class="modal-cont-category" *ngFor="let amenity of amenetiesListArr; let index = index;">
+            <h4>{{ amenity?.category }}</h4>
+            <p *ngFor="let item of amenity?.ameneties; let index = index;">{{ item }}</p>
+        </div>
+        <button class="close-modal-btn" (click)="closeModalFn()">Close</button>
+    </div>
+</div>
+<div class="ameneties-sm-back-btn-blck">
+    <button type="button">Back</button>
+</div>
