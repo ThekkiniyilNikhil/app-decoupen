@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Optional, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CarouselModule } from 'primeng/carousel';
 
@@ -19,12 +19,19 @@ export class RoomDetailsModalComponent {
     'https://placehold.co/250x250/orange/white',
     'https://placehold.co/250x250/orange/white'
   ];
+  @Input() openAsBottomSheetModal: boolean;
+  @Output() hideRoomDetOpenAsBotSheet = new EventEmitter<boolean>();
 
   constructor(
-    private dialogRef: MatDialogRef<RoomDetailsModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any
+    @Optional() private dialogRef: MatDialogRef<RoomDetailsModalComponent>, 
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   closeModalFn() {
     this.dialogRef.close();
+  }
+
+  hideRoomDetOpenAsBotSheetFn() {
+    this.hideRoomDetOpenAsBotSheet.emit(true);
   }
 }

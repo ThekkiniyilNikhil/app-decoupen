@@ -1,4 +1,4 @@
-<div class="modal-cntr" [class.small-scrn-wrpr]="openFromComponent">
+<div class="modal-cntr" [class.small-scrn-wrpr]="openAsBottomSheetModal">
     <div class="modal-ttl">
         <h3>Amenities</h3>
         <div class="close-btn" (click)="closeModalFn()"></div>
@@ -12,5 +12,5 @@
     </div>
 </div>
 <div class="ameneties-sm-back-btn-blck">
-    <button type="button">Back</button>
+    <button type="button" (click)="closeBottomSheetFn()">Back</button>
 </div>

@@ -1,5 +1,5 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { IncrementDecrementCounterComponent } from '../../shared/components/increment-decrement-counter/increment-decrement-counter.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MoreAmenetiesComponent } from '../../shared/components/more-ameneties/more-ameneties.component';
@@ -9,11 +9,11 @@ import { SelectRoomsComponent } from '../../shared/components/select-rooms/selec
 
 @Component({
   selector: 'app-property-details',
-  imports: [CommonModule, IncrementDecrementCounterComponent, CarouselModule, SelectRoomsComponent, MoreAmenetiesComponent],
+  imports: [CommonModule, IncrementDecrementCounterComponent, CarouselModule, SelectRoomsComponent, MoreAmenetiesComponent, RoomDetailsModalComponent],
   templateUrl: './property-details.component.html',
   styleUrl: './property-details.component.scss'
 })
-export class PropertyDetailsComponent implements OnInit, AfterViewInit {
+export class PropertyDetailsComponent implements OnInit, AfterViewInit, OnDestroy  {
   dummyAmenetiesArr = [
     {
       name: 'Wifi',
@@ -103,11 +103,16 @@ export class PropertyDetailsComponent implements OnInit, AfterViewInit {
   showRoomsInSmScreen = false;
   showMoreAmenetiesInSmScreen = false;
   isSmallDevices: boolean = false;
+  showMoreRoomDetails: boolean = false;
+  isBrowser: boolean;
 
-  constructor(private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit(): void {
     this.generatePptyImagesForSliderFn();
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngAfterViewInit(): void {
@@ -142,6 +147,9 @@ export class PropertyDetailsComponent implements OnInit, AfterViewInit {
       });
     } else {
       this.showMoreAmenetiesInSmScreen = true;
+      if(this.isBrowser) {
+        this.renderer.addClass(this.document.body, 'hidden-overflow');
+      }
     }
   }
 
@@ -163,5 +171,36 @@ export class PropertyDetailsComponent implements OnInit, AfterViewInit {
   // method to close rooms available in small screens
   closeSelectRoomInSmFn() {
     this.showRoomsInSmScreen = false;
+  }
+
+  // method to open more details of selected room
+  showSelectedRoomMoreDetFn(event: boolean) {
+    this.showMoreRoomDetails = event;
+    this.showRoomsInSmScreen = false;
+    if(this.isBrowser) {
+      this.renderer.addClass(this.document.body, 'hidden-overflow');
+    }
+  }
+
+  // method to hide ameneties open as bottom sheet
+  hideAmenetiesOpenAsBottomSheetFn(event: boolean) {
+    this.showMoreAmenetiesInSmScreen = !event;
+    if(this.isBrowser) {
+      this.renderer.removeClass(this.document.body, 'hidden-overflow');
+    }
+  }
+
+  // method to hide room details open as bottom sheet
+  hideRoomDetOpenAsBotSheetFn(event: boolean) {
+    this.showMoreRoomDetails = !event;
+    if(this.isBrowser) {
+      this.renderer.removeClass(this.document.body, 'hidden-overflow');
+    }
+  }
+
+  ngOnDestroy(): void {
+    if(this.isBrowser) {
+      this.renderer.removeClass(this.document.body, 'hidden-overflow');
+    } 
   }
 }

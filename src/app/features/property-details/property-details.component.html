@@ -242,16 +242,22 @@
 
 <ng-container *ngIf="isSmallDevices">
     <div class="bottom-sheet-modal" [class.show-cntr]="showRoomsInSmScreen">
-        <app-select-rooms (backArrowClicked)="closeSelectRoomInSmFn()"></app-select-rooms>
+        <app-select-rooms (backArrowClicked)="closeSelectRoomInSmFn()" (moreDetailClicked)="showSelectedRoomMoreDetFn($event)"></app-select-rooms>
     </div>
 </ng-container>
 
 <ng-container *ngIf="isSmallDevices">
-    <div class="bottom-sheet-modal ameneties-bottom-modal" [ngClass]="{'show-cntr': showMoreAmenetiesInSmScreen}">
-        <app-more-ameneties [amenetiesList]="dummyMoreAmenetiesArr" [openFromComponent]="true"></app-more-ameneties>
+    <div class="bottom-sheet-modal variable-ht-bottom-modal" [class.show-cntr]="showMoreAmenetiesInSmScreen">
+        <app-more-ameneties [amenetiesList]="dummyMoreAmenetiesArr" [openAsBottomSheetModal]="true" (hideOpenAsBottomSheetModal)="hideAmenetiesOpenAsBottomSheetFn($event)"></app-more-ameneties>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="isSmallDevices">
+    <div class="bottom-sheet-modal variable-ht-bottom-modal" [class.show-cntr]="showMoreRoomDetails">
+        <app-room-details-modal [openAsBottomSheetModal]="true" (hideRoomDetOpenAsBotSheet)="hideRoomDetOpenAsBotSheetFn($event)"></app-room-details-modal>
     </div>
 </ng-container>
 <!-- TRANSPARENT OVRLAY -->
-<div class="transparent-overlay-cntr" *ngIf="showMoreAmenetiesInSmScreen"></div>
+<div class="transparent-overlay-cntr" *ngIf="showMoreAmenetiesInSmScreen || showMoreRoomDetails"></div>
 
 

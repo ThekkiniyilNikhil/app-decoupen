@@ -157,3 +157,80 @@
         }
     }
 }
+.back-btn-cntr {
+    display: none;
+}
+.bottom-sheet-cntr {
+    height: 100%;
+    padding: 34px 20px 120px 20px;
+    overflow-y: auto;
+    .modal-ttl {
+        h3 {
+            font-size: 22px;
+        }
+        .close-btn-ico {
+            display: none;
+        }
+    }
+    .det-one-blck,
+    .det-two-blck,
+    .det-three-blck {
+        grid-column: 1/-1;
+    }
+    .det-three-blck {
+        margin-top: 20px;
+    }
+    .close-btn {
+        display: none;
+    }
+    ::ng-deep .room-imgs-slidr {
+        width: 100%;
+        height: 175px;
+        p-carousel {
+            width: 100%;
+            .p-carousel.p-component.p-carousel-horizontal {
+                .p-carousel-content-container {
+                    .p-carousel-viewport {
+                        .p-carousel-item-list {
+                            .p-carousel-item {
+                                img {
+                                    height: 175px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .room-spcl-blck {
+        span {
+            font-size: 14px;
+        }
+    }
+    .room-det-info {
+        font-size: 14px;
+    }
+    
+}
+@media screen and (max-width: 767px) {
+    .back-btn-cntr {
+        width: 100%;
+        display: block;
+        padding: 24px 20px;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+    }
+    .back-btn {
+        width: 100%;
+        height: 50px;
+        font-family: "Plus Jakarta Sans", serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #1f1f1f;
+        background-color: transparent;
+        border: 1px solid #1f1f1f;
+        border-radius: 6px;
+    }
+}

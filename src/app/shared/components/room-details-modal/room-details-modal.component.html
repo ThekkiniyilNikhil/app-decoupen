@@ -1,4 +1,4 @@
-<div class="modal-outr">
+<div class="modal-outr" [class.bottom-sheet-cntr]="openAsBottomSheetModal">
     <div class="modal-ttl">
         <h3>Deluxe Double Room</h3>
         <div class="close-btn-ico" (click)="closeModalFn()"></div>
@@ -53,4 +53,7 @@
         </div>
         <button class="close-btn" (click)="closeModalFn()">Close</button>
     </div>
+</div>
+<div class="back-btn-cntr">
+    <button class="back-btn" type="button" (click)="hideRoomDetOpenAsBotSheetFn()">Back</button>
 </div>

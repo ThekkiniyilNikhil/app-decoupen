@@ -10,8 +10,13 @@ import { IncrementDecrementCounterComponent } from '../increment-decrement-count
 export class SelectRoomsComponent {
 
   @Output() backArrowClicked = new EventEmitter<boolean>();
+  @Output() moreDetailClicked = new EventEmitter<boolean>();
 
   closeSelRoomCntrFn() {
     this.backArrowClicked.emit(true);
+  }
+
+  viewMoreDetailsInSmScreenFn() {
+    this.moreDetailClicked.emit(true)
   }
 }

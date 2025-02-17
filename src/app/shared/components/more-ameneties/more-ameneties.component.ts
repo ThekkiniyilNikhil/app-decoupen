@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Optional, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -12,7 +12,8 @@ export class MoreAmenetiesComponent implements OnInit {
 
   @Input() amenetiesList: any;
   amenetiesListArr: any;
-  @Input() openFromComponent: boolean;
+  @Input() openAsBottomSheetModal: boolean;
+  @Output() hideOpenAsBottomSheetModal = new EventEmitter<boolean>();
 
   constructor(
     @Optional() private dialogRef: MatDialogRef<MoreAmenetiesComponent>, 
@@ -24,5 +25,9 @@ export class MoreAmenetiesComponent implements OnInit {
 
   closeModalFn() {
     this.dialogRef.close();
+  }
+
+  closeBottomSheetFn() {
+    this.hideOpenAsBottomSheetModal.emit(true);
   }
 }
