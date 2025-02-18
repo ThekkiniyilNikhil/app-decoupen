@@ -26,28 +26,65 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
+    position: relative;
 }
 .login-btn {
     cursor: pointer;
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    color: #1f1f1f;
+    width: 86px;
+    height: 42px;
     font-size: 14px;
     border-radius: 4px;
-    background-color: #fff;
+    color: #fff;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
     border: 0;
     padding: 0;
-    border: 1px solid #1f1f1f;
-    border-radius: 4px;
+    background-color: #1f1f1f;
+    font-family: "Plus Jakarta Sans", serif;
+    font-weight: 600;
 }
 .menu-dropdown {
     width: 36px;
     height: 24px;
-    background: url('/assets/images/sprite-svg.svg') no-repeat  -41px -13px;
+    background: url('/assets/images/sprite-svg.svg') no-repeat  -40px -10px;
+    cursor: pointer;
+}
+.header-right-blck {
+    display: flex;
+    align-items: center;
+}
+.menu-dropdown-cntr {
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 14px 0 rgba(180, 180, 180, 0.25);
+    position: absolute;
+    top: 48px;
+    right: 0;
+}
+.menu-dropdwn-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #5f5f5f;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .db-cash-bck {
+        display: inline-block;
+        padding: 7.5px 10px;
+        font-weight: 600;
+        font-size: 12px;
+        color: #069F0C;
+        background-color: #ECFEEC;
+        border-radius: 6px;
+        margin-left: 5px;
+    }
 }
 
 @media screen and (max-width: 767px) {

@@ -3,13 +3,24 @@
         <a href="">
             <img src="assets/images/logo.svg" alt="">
         </a>
-        <div class="middle-blck" *ngIf="!isLoginScreen">
-            <a href="" class="header-nav-link">List your property</a>
-            <a href="" class="header-nav-link">User Dashboard</a>
-        </div>
-        <div class="right-blck">
-            <button type="button" class="login-btn" *ngIf="!isLoginScreen">Login</button>
-            <div class="menu-dropdown"></div>
+        <div class="header-right-blck">
+            <div class="middle-blck">
+                <a href="" class="header-nav-link">List your property</a>
+                <a href="" class="header-nav-link">How it Works?</a>
+                <a href="" class="header-nav-link">Contact Us</a>
+            </div>
+            <div class="right-blck">
+                <button type="button" class="login-btn" *ngIf="!isLoginScreen">Login</button>
+                <div class="menu-dropdown" *ngIf="isLoginScreen"></div>
+                <div class="menu-dropdown-cntr">
+                    <a class="menu-dropdwn-item">My Bookings</a>
+                    <a class="menu-dropdwn-item">
+                        <span>Earning Dashboard</span>
+                        <span class="db-cash-bck">&#8377;750</span>
+                    </a>
+                    <a class="menu-dropdwn-item">Sign out</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
