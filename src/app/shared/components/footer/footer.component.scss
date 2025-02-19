@@ -11,7 +11,7 @@
     padding: 36px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
+    row-gap: 40px;
     .ftr-brnd-logo {
         grid-column: 1/2;
     }
@@ -50,20 +50,59 @@
         grid-column: 1/2;
     }
     .tc-link {
+        display: block;
         font-weight: 400;
         color: #000;
         font-size: 16px;
         text-decoration: none;
+        margin-bottom: 20px;
         &:last-child {
-            margin-left: 20px;
+            margin-bottom: 0;
         }
     }
     .copyright-details {
-        grid-column: 2/-1;
+        align-self: flex-end;
         justify-self: flex-end;
         margin: 0;
         color: #222222;
         font-size: 16px;
         font-weight: 400;
     }
+}
+.ftr-menu-items-blck {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 180px 180px 1fr;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .ftr-outr-blck {
+        padding: 0 20px;
+    }
+    .ftr-blck {
+        max-width: 100%;
+        padding-bottom: 130px;
+        .tc-link {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .copyright-details {
+            grid-column: 1/-1;
+            justify-self: center;
+            font-size: 12px;
+            color: #696969;
+            margin-top: 32px;
+        }
+    }
+    .ftr-menu-one-blck,
+    .ftr-menu-two-blck {
+        grid-column: 1/-1;
+    }
+    .ftr-menu-two-blck {
+        margin-top: 15px;
+    }
+    
 }

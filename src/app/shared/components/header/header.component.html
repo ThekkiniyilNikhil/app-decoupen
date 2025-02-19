@@ -11,15 +11,29 @@
             </div>
             <div class="right-blck">
                 <button type="button" class="login-btn" *ngIf="!isLoginScreen">Login</button>
-                <div class="menu-dropdown" *ngIf="isLoginScreen"></div>
-                <div class="menu-dropdown-cntr">
-                    <a class="menu-dropdwn-item">My Bookings</a>
-                    <a class="menu-dropdwn-item">
-                        <span>Earning Dashboard</span>
-                        <span class="db-cash-bck">&#8377;750</span>
-                    </a>
-                    <a class="menu-dropdwn-item">Sign out</a>
+                <div appOutsideClick (appOutsideClick)="handleOutsideClickOfMainMenuFn($event)" *ngIf="isLoginScreen">
+                    <div class="menu-dropdown" (click)="showMenuDropdownFn($event)"></div>
+                    <div class="menu-dropdown-cntr" [class.sm-menu-drpdwn-cntr]="isMobile" [class.width-max-content]="isMobile" *ngIf="showDropdownMenu">
+                        <a class="menu-dropdwn-item">My Bookings</a>
+                        <a class="menu-dropdwn-item">
+                            <span>Earning Dashboard</span>
+                            <span class="db-cash-bck">&#8377;750</span>
+                        </a>
+                        <a class="menu-dropdwn-item" *ngIf="isMobile">List your property</a>
+                        <a class="menu-dropdwn-item" *ngIf="isMobile">How it Works?</a>
+                        <a class="menu-dropdwn-item" *ngIf="isMobile">Contact Us</a>
+                        <a class="menu-dropdwn-item">Sign out</a>
+                    </div>
                 </div>
+                <!-- MENU DROPDOWN BUTTON, BEFOR LOGIN IN SMALL DEVICES -->
+                 <div appOutsideClick (appOutsideClick)="handleOutsideClickOfMainMenuInSmFn($event)" *ngIf="isMobile && !isLoginScreen">
+                    <div class="login-menu-btn" (click)="showMenuDropDownInMobFn($event)"></div>
+                    <div class="menu-dropdown-cntr sm-menu-drpdwn-cntr" *ngIf="showDropDownInSmallDevices">
+                        <a class="menu-dropdwn-item">List your property</a>
+                        <a class="menu-dropdwn-item">How it Works?</a>
+                        <a class="menu-dropdwn-item">Contact Us</a>
+                    </div>
+                 </div>
             </div>
         </div>
     </div>
