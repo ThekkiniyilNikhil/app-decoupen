@@ -1,0 +1,56 @@
+<div class="order-smry-cntr">
+    <div class="left-blck">
+        <h1 class="cnfrm-pay-ttl">Confirm and Pay</h1>
+        <ng-container *ngIf="false">
+            <ng-container *ngIf="true">
+                <h3 class="login-reg-ttl">Log in or register</h3>
+                <p class="input-label">mobile number</p>
+                <ng-container>
+                    <input type="text" class="input-textbx" name="" id="" placeholder="+91-Enter your number">
+                </ng-container>
+                <p class="otp-snd-ins-txt">We'll send an OTP to verify your number. Message and data rates may apply.</p>
+                <button type="button" class="cnt-btn">Continue</button>
+                <div class="sign-in-wth-blck"></div>
+                <div class="sign-in-opt-btn">
+                    <div class="google-icon"></div>
+                    <span>Continue with Google</span>
+                </div>
+                <!-- <div class="sign-in-opt-btn">
+                    <div class="mob-icon"></div>
+                    <span>Continue with Mobile Number</span>
+                </div> -->
+                <div class="sign-in-opt-btn">
+                    <div class="email-icon"></div>
+                    <span>Continue with Email</span>
+                </div>
+                <p class="privacy-pol-txt">By proceeding, you agree to DecoupeN's <a href="">Privacy Policy</a></p>
+            </ng-container>
+            <ng-container *ngIf="false">
+                <h3 class="title-text otp-title-tex">Verify OTP</h3>
+                <p class="otp-send-msg">
+                    Enter 6-digit OTP sent to <strong>+918383992222</strong>
+                </p>
+                <div class="otp-input-container">
+                    <ngx-otp-input #otpInput [options]="otpOptions" (otpComplete)="onOtpChange($event)"></ngx-otp-input>
+                </div>
+                <button type="button" class="cnt-btn">Continue</button>
+                <button type="button" class="otp-back-btn mt-12px">Back</button>
+                <div class="resend-otp-blck">
+                    <p class="warn-msg" *ngIf="false">Resend OTP in <span>59</span> secs</p>
+                    <a class="resend-otp-btn">Resend OTP</a>
+                </div>
+                <p class="privacy-pol-txt otp-privacy-policy">By proceeding, you agree to DecoupeN's <a href="">Privacy Policy</a></p>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="true">
+            <div class="user-signd-blck">
+                <div class="user-avtr"></div>
+                <div class="user-det-blck">
+                    <h3>You’re signed in</h3>
+                    <p>asjdhsfjh&#64;gmail.com</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div>22</div>
+</div>

@@ -17,3 +17,33 @@ body {
 .hidden-overflow {
     overflow: hidden;
 }
+.input-textbx {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    padding-left: 16px;
+    border-radius: 8px;
+    border: 1px solid #e4e4e4;
+    &::placeholder {
+        font-family: "Plus Jakarta Sans", serif;
+        color: #adadad;
+    }
+}
+.cnt-btn {
+    width: 100%;
+    height: 56px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    background: linear-gradient(0deg, #E6132F 0%, #EC4C1D 100%);
+    outline: none;
+    border: none;
+    font-family: "Plus Jakarta Sans", serif;
+    margin-top: 26px;
+    cursor: pointer;
+    &.disabled-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
