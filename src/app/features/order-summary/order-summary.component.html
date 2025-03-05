@@ -50,6 +50,76 @@
                     <p>asjdhsfjh&#64;gmail.com</p>
                 </div>
             </div>
+            <h3 class="appl-more-dscnt-ttl">Apply more discounts</h3>
+            <div class="dscnt-det-blck">
+                <div class="dscnt-ico-blck dscnt-coupn"></div>
+                <div class="dscnt-code-det-blck">
+                    <h3>JOHN1526W</h3>
+                    <p>Congrats! Coupen applied. You’ll receive ₹1000 cashback on successful booking.</p>
+                    <span>Applied</span>
+                </div>
+            </div>
+            <div class="dscnt-det-blck">
+                <div class="dscnt-ico-blck dscnt-gift"></div>
+                <div class="dscnt-code-det-blck">
+                    <h3>2 x Decoupens</h3>
+                    <p>You’ll get 2 Decoupens for 2 extra cashbacks on successful booking.</p>
+                </div>
+            </div>
+            <div class="dscnt-det-blck dscnt-cnfrm-chek-blck">
+                <p-checkbox [(ngModel)]="useDecouponBalance" binary="true" inputId="decouponBalance" />
+                <label for="decouponBalance">Use <span class="dscnt-price">₹1500</span> from your  Decoupen balance</label>
+            </div>
+            <div class="dscnt-det-blck dscnt-appld-blck">
+                <div class="dscnt-ico-blck dscnt-coupn-appld"></div>
+                <div class="dscnt-code-det-blck">
+                    <h3>NEWBOOKING25</h3>
+                    <p>Congrats! You’ll receive ₹500 cashback on room prices</p>
+                    <span class="dscnt-appld-txt">Applied</span>
+                </div>
+            </div>
+            <div class="enter-promocode-blck">
+                <h4>Have coupen code/promo code?</h4>
+                <div class="promocode-input-blck">
+                    <input type="text" placeholder="Enter code">
+                    <button type="button">Apply</button>
+                </div>
+            </div>
+            <h3 class="gust-ttl">Guest Details</h3>
+            <p class="gust-sub-ttl">Booking details will be sent to the contact info added below.</p>
+            <div class="guest-form-cntr form-cntr-blck">
+                <div class="left-half-col">
+                    <label>Guest full Name</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="guestFullName">
+                </div>
+                <div class="right-half-col">
+                    <label>Guest mobile number</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="guestMobNumber">
+                </div>
+                <div class="full-col">
+                    <label>Guest email ID</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="guestEmailId">
+                </div>
+            </div>
+            <div class="enable-gst-blck">
+                <p-checkbox [(ngModel)]="isEnterGSTDetails" binary="true" inputId="enableGstDetails" />
+                <label for="enableGstDetails"><span>Enter GST Details</span> (Optional)</label>
+            </div>
+            <div class="form-cntr-blck gst-reg-blck" *ngIf="isEnterGSTDetails">
+                <div class="left-half-col">
+                    <label>Registration Number</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="gstRegNumber" placeholder="Enter registration number">
+                </div>
+                <div class="right-half-col">
+                    <label>company Name</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="gstCompanyName" placeholder="Enter company name">
+                </div>
+                <div class="full-col">
+                    <label>Registered Company Address</label>
+                    <input type="text" class="input-textbx" [(ngModel)]="gstCompanyAddress" placeholder="Enter company address">
+                </div>
+            </div>
+            <button type="button" class="cnt-btn">Confirm Details</button>
         </ng-container>
     </div>
     <div>22</div>
