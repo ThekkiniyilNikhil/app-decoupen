@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgxOtpInputComponent, NgxOtpInputComponentOptions } from 'ngx-otp-input';
 import { Checkbox } from 'primeng/checkbox';
+import { BookingSummaryComponent } from '../booking-summary/booking-summary.component';
 
 @Component({
   selector: 'app-order-summary',
-  imports: [CommonModule, FormsModule, NgxOtpInputComponent, Checkbox],
+  imports: [CommonModule, FormsModule, NgxOtpInputComponent, Checkbox, BookingSummaryComponent],
   templateUrl: './order-summary.component.html',
   styleUrl: './order-summary.component.scss'
 })

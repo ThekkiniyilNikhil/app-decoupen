@@ -1,0 +1,173 @@
+.bukn-smry-cntr {
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 12px 1px rgba(204, 204, 204, 0.25);
+    border: 1px solid rgba(204, 204, 204, 0.25);
+}
+.ppty-bukd-det-blck {
+    padding: 20px;
+    background-color: #F1F9FE;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.resort-thumb-img {
+    max-width: 100%;
+}
+.ppty-bukd-det {
+    display: flex;
+    column-gap: 20px;
+}
+.ppty-det-blck {
+    flex: 1;
+    .rsrt-ttl {
+        color: #000;
+        font-size: 18px;
+        margin: 0;
+        font-weight: 700;
+    }
+    .rsrt-addr {
+        font-size: 13px;
+        font-weight: 400;
+        color: #5f5f5f;
+        margin-bottom: 6px;
+        margin-top: 6px;
+    }
+    .rsrt-rtng-blck {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+    .rsrt-str {
+        width: 13px;
+        height: 13px;
+        background: url('/assets/images/sprite-png.png') no-repeat -457px -41px;
+        background-size: 496px 258px;
+    }
+    .rsrt-rat-val {
+        font-size: 14px;
+        color: #222;
+        font-weight: 600;
+    }
+}
+.ppty-bukd-timngs-blck {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    h4 {
+        font-weight: 500;
+        font-size: 13px;
+        color: #5f5f5f;
+        margin: 0;
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 15px;
+        color: #1f1f1f;
+        margin: 0;
+    }
+}
+.bukng-smmry-blck {
+    padding: 20px 20px 0 20px;
+    .bkng-smry-ttl {
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .bkng-categry {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .cat-item {
+        font-size: 16px;
+        color: #333;
+    }
+    .cat-type {
+        font-weight: 400;
+    }
+    .cat-amt {
+        font-weight: 700;
+    }
+    .bkng-decoupon-cat {
+        padding: 6px 8px;
+        background-color: #FFF6F2;
+    }
+    .bkng-decoupon-left-blck,
+    .bkng-dscnt-left-blck {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+    }
+    .bkng-decoupon-ico {
+        background: url('/assets/images/sprite-png.png') no-repeat -341px -157px;
+        background-size: 496px 258px;
+        width: 20px;
+        height: 19px;
+    }
+    .bkng-dec-txt {
+        font-size: 16px;
+        font-weight: 600;
+        background: linear-gradient(90deg, #E6132F 0%, #F56B2B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .bkng-dscnt-cat {
+        padding: 6px 8px;
+        background-color: #EDFCF3;
+    }
+    .bkng-dscnt-ico {
+        background: url('/assets/images/sprite-png.png') no-repeat -308px -157px;
+        background-size: 496px 258px;
+        width: 19px;
+        height: 19px;
+    }
+    .bkng-dscnt-txt {
+        font-size: 16px;
+        font-weight: 500;
+        color: #0C9E42;
+        &.bkng-dscnt-amt-txt {
+            font-weight: 700;
+        }
+    }
+    .bkng-total-dscnt {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .bkng-total-txt {
+        font-weight: 700;
+        font-size: 22px;
+        color: #333;
+    }
+    .bkng-category-total {
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+    .bkng-total-amts-blck {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 5px;
+        .strike-off-price {
+            text-decoration: line-through;
+            font-weight: 600;
+            font-size: 16px;
+            color: #5f5f5f;
+        }
+        .actual-price {
+            font-weight: 700;
+            font-size: 22px;
+            color: #1f1f1f;
+        }
+    }
+    .taxes-and-fees-txt {
+        font-weight: 400;
+        font-size: 14px;
+        color: #5f5f5f;
+        margin-top: 4px;
+        margin-bottom: 0;
+    }
+}
