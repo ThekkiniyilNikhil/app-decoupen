@@ -1,0 +1,41 @@
+<div class="order-smry-cntr">
+    <div class="left-blck">
+        <h1 class="cnfrm-pay-ttl">Confirm and Pay</h1>
+        <div class="user-signd-blck">
+            <div class="user-avtr"></div>
+            <div class="user-det-blck">
+                <h3>You’re signed in</h3>
+                <p>asjdhsfjh&#64;gmail.com</p>
+            </div>
+        </div>
+        <h3 class="appl-more-dscnt-ttl">Payment Options</h3>
+        <div class="guest-form-cntr form-cntr-blck">
+            <div class="left-half-col pmt-opts-cntr">
+                <input type="radio" name="paymentOpts" value="upiId" [(ngModel)]="paymentOpts" id="upiId">
+                <label for="upiId" class="pmt-label">
+                    <span class="pmt-label-circle"></span>
+                    UPI ID
+                </label>
+            </div>
+            <div class="right-half-col pmt-opts-cntr">
+                <input type="radio" name="paymentOpts" value="qrCode" [(ngModel)]="paymentOpts" id="qrCode">
+                <label for="qrCode" class="pmt-label">
+                    <span class="pmt-label-circle"></span>
+                    Scan QR Code
+                </label>
+            </div>
+            <div class="full-col">
+                <input class="input-textbx" type="text" placeholder="Enter your UPI ID">
+                <p class="upid-instr-txt">Eg: Your username&#64;bank</p>
+            </div>
+            <button class="full-col cnt-btn mt-0px" type="button">Confirm and Pay</button>
+            <button class="full-col outline-btn" type="button">Book now & Pay at Hotel</button>
+        </div>
+        <h3 class="cancel-pol-ttl">Cancellation Policy</h3>
+        <p class="cancel-pol-ins-txt">Free cancellation before 29 Jul 2025. After that, the reservation is non-refundable.</p>
+        <p class="rsrvtn-tc-txt">By confirming this reservation, I accept the <a href="">Terms & Conditions, Privacy Policy</a> and <a href="">Refund Policy</a>.</p>
+    </div>
+    <div>
+        <app-booking-summary></app-booking-summary>
+    </div>
+</div>

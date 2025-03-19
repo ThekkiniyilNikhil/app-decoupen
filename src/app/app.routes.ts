@@ -25,5 +25,9 @@ export const routes: Routes = [
     {
         path: 'order-summary',
         loadComponent: () => import('./features/order-summary/order-summary.component').then(m => m.OrderSummaryComponent)
+    },
+    {
+        path: 'payment-details',
+        loadComponent: () => import('./features/payment-details/payment-details.component').then(m => m.PaymentDetailsComponent)
     }
 ];
