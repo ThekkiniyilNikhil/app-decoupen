@@ -29,5 +29,13 @@ export const routes: Routes = [
     {
         path: 'payment-details',
         loadComponent: () => import('./features/payment-details/payment-details.component').then(m => m.PaymentDetailsComponent)
+    },
+    {
+        path: 'about-us',
+        loadComponent: () => import('./features/about-us/about-us.component').then(m => m.AboutUsComponent)
+    },
+    {
+        path: 'contact-us',
+        loadComponent: () => import('./features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
     }
 ];
