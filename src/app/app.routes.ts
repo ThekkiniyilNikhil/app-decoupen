@@ -37,5 +37,17 @@ export const routes: Routes = [
     {
         path: 'contact-us',
         loadComponent: () => import('./features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
+    },
+    {
+        path: 'privacy-policy',
+        loadComponent: () => import('./features/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent)
+    },
+    {
+        path: 'terms-and-conditions',
+        loadComponent: () => import('./features/terms-and-conditions/terms-and-conditions.component').then(m => m.TermsAndConditionsComponent)
+    },
+    {
+        path: 'refund-policy',
+        loadComponent: () => import('./features/refund-policy/refund-policy.component').then(m => m.RefundPolicyComponent)
     }
 ];

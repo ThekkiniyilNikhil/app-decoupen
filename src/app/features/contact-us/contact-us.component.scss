@@ -1,1 +1,73 @@
-@import "../about-us/about-us.component.scss";
+@use "../about-us/about-us.component.scss";
+.reach-us-ttl {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-top: 40px;
+    margin-bottom: 32px;
+}
+.reach-us-blck {
+    .reach-us-option {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        width: 335px;
+        padding: 18px;
+        background-color: #F8F8F8;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    .reach-us-option .img-blck {
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+        &.watsap {
+            background: url('/assets/images/sprite-png.png') no-repeat -381px -154px;
+            background-size: 496px 258px;
+        }
+        &.call {
+            background: url('/assets/images/sprite-png.png') no-repeat -424px -156px;
+            background-size: 496px 258px;
+        }
+        &.mail {
+            background: url('/assets/images/sprite-png.png') no-repeat -459px -152px;
+            background-size: 496px 258px;
+        }
+    }
+    .reach-us-txt {
+        font-size: 18px;
+        font-weight: 400;
+        color: #1f1f1f;
+        text-decoration: none;
+    }
+}
+.faq-section-ttl {
+    font-weight: 600;
+    color: #1f1f1f;
+    font-size: 28px;
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+.faq-blck {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #F9F8F8;
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .faq-ttl {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f1f1f;
+        margin-top: 0;
+    }
+    .faq-cnt {
+        font-size: 16px;
+        font-weight: 600;
+        color: #717171;
+        margin-bottom: 0;
+        line-height: 140%;
+    }
+}
