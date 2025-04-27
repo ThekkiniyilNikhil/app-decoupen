@@ -1,0 +1,24 @@
+<div class="modal-cntr">
+    <div class="close-icon" (click)="closeFn()"></div>
+    <h2>Make Travelling an Investment.</h2>
+    <h4>Do you have any recent travel plans?</h4>
+    <div class="position-relative">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" [(ngModel)]="fullName" [class.error-border]="formErrors.fullNameReqErr" (input)="onValueEnterFn()">
+        <span class="error-message" *ngIf="formErrors.fullNameReqErr != ''">{{ formErrors.fullNameReqErr }}</span>
+    </div>
+    <div class="position-relative">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email ID" [(ngModel)]="emailId" [class.error-border]="formErrors.emailIdErr" (input)="onValueEnterFn()">
+        <span class="error-message" *ngIf="formErrors.emailIdErr != ''">{{ formErrors.emailIdErr }}</span>
+    </div>
+    <div class="position-relative">
+        <label for="mobNumber">Mobile Number</label>
+        <input type="text" id="mobNumber" placeholder="+91 - Enter your number" [(ngModel)]="mobNumber" [class.error-border]="formErrors.mobNumErr" (input)="onValueEnterFn()">
+        <span class="error-message" *ngIf="formErrors.mobNumErr != ''">{{ formErrors.mobNumErr }}</span>
+    </div>
+    <div class="btn-contr">
+        <button type="button" class="cncl-btn" (click)="closeFn()">I’m not travelling now</button>
+        <button type="button" class="apprv-btn" (click)="submitFn()">Yes, I have a travel plan</button>
+    </div>
+</div>

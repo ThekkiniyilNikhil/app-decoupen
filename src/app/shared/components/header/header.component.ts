@@ -1,6 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { OutsideClickDirective } from '../../Directives/outside-click.directive';
 
 @Component({
@@ -16,12 +18,32 @@ export class HeaderComponent implements OnInit {
   @ViewChild('menuDropdownContainer') menuDropdownContainer!: ElementRef;
   isMobile: boolean = false;
   showDropDownInSmallDevices: boolean = false;
+  parentHeaderClassName: string = '';
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.setClassNameToParentElementFn();
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
+    });
+  }
+
+  // method to set class name to parent class for adjusting header styles, based on pages
+  setClassNameToParentElementFn() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event) => {
+      const url = event.urlAfterRedirects;
+      this.parentHeaderClassName = '';
+      if(url.includes('/home')) {
+        this.parentHeaderClassName = 'home-header'
+      } else {
+        this.parentHeaderClassName = '';
+      }
     });
   }
 

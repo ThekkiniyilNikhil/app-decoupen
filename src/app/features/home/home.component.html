@@ -1,73 +1,74 @@
 <div class="landing-page-main-container">
+    <div class="landing-search-cntr">
+        <div class="ppty-srch-block">
+            <h1 class="ttl-txt">Book with us &<br><span>Earn with us</span></h1>
+            <p class="desc-txt">Make travel an investment with your long term<br> booking partner</p>
+            <div class="main-search-blck">
+                <div class="srch-items-blck">
+                    <h5>Where</h5>
+                    <input type="text" placeholder="Destination">
+                </div>
+                <div class="srch-items-blck">
+                    <h5>When</h5>
+                    <!-- <input type="text" class="calendar-input"  placeholder="Check In - Check Out"> -->
+                    <p-datepicker [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" 
+                        dateFormat="dd M" [minDate]="currentDay"></p-datepicker>
+                </div>
+                <div class="srch-items-blck last-elem">
+                    <h5>Guests</h5>
+                    <div class="sel-guests" (click)="toggleGuestsSelFn($event)">Select Guests</div>
+                    <p-popover #guestPopOver>
+                        @for (item of dummyGuestsSearchValues; track item) {
+                            <div class="guests-counts-blck">
+                                <div>
+                                    <p class="guests-count-cat-ttl">{{ item?.category }}</p>
+                                    <p class="guests-count-range-ttl">{{ item?.ageRange }}</p>
+                                </div>
+                                <app-increment-decrement-counter [counterValue]="item.defaultCount"></app-increment-decrement-counter>
+                            </div>
+                        }
+                    </p-popover>
+                </div>
+                <button type="button" class="cnt-btn main-srch-btn" (click)="searchPropertiesFn()">Search</button>
+            </div>
+        </div>
+    </div>
     <div class="landing-page-container">
         <div class="avg-trip-det">
             <div class="avg-trip-icon"></div>
             <p class="info">An average Indian takes about <span class="red-highlight">260-325</span> domestic trips in their lifetime, but Decoupen ensure you only pay for <span class="red-highlight">130 trips</span>.</p>
         </div>
-        <!-- stand out block -->
-        <div class="stand-out-blck">
-            <h3 class="title-txt">Here's why we stand out!</h3>
-            <div class="std-resns std-resns-1">
-                <div class="std-info-blck">
-                    <h3>Cashback Deals</h3>
-                    <p>Earn up to 60% cashback on<br> your accommodations.</p>
+        <!-- HOW DECOUPON WORKS -->
+         <div class="how-decoupon-wrks-blck">
+            <h2 class="ttl-txt">How <span>Decoupen</span> work?</h2>
+            <div class="decoupn-steps-blck">
+                <div class="decoupn-step-1">
+                    <img src="/assets/images/decoupon-step-one.png" alt="decoupon-works-step-one">
+                    <h4>Choose a room from our site</h4>
                 </div>
-                <div class="imgs-blck-container">
-                    <div class="imgs-blck"></div>
+                <div class="decoupn-step-2">
+                    <img src="/assets/images/decoupon-step-two.png" alt="decoupon-works-step-two">
+                    <h4>Get decoupens once your order<br> is confirmed.</h4>
                 </div>
-            </div>
-            <div class="std-resns std-resns-2">
-                <div class="std-info-blck">
-                    <h3>Passive Income</h3>
-                    <p>Earn up to 60% cashback on<br> your accommodations.</p>
-                </div>
-                <div class="imgs-blck-container">
-                    <div class="imgs-blck"></div>
+                <div class="decoupn-step-3">
+                    <img src="/assets/images/decoupon-step-three.png" alt="decoupon-works-step-three">
+                    <h4>Get your cashbacks redeemed<br> in your upcoming bookings.</h4>
                 </div>
             </div>
-            <div class="std-resns std-resns-3">
-                <div class="std-info-blck">
-                    <h3>Discounted Prices</h3>
-                    <p>Earn up to 60% cashback on<br> your accommodations.</p>
-                </div>
-                <div class="imgs-blck-container">
-                    <div class="imgs-blck"></div>
-                </div>
-            </div>
-        </div>
-        <!-- latest hotel rates -->
-        <div class="latest-hotel-rates-blck">
-            <h3 class="title-txt">Explore Latest Hotel Rates</h3>
-            <div class="hotels-lists-blck">
-                <div class="hotel-list-title-blck">
-                    <p>HOTELS</p>
-                    <p>No. of people<br>earning</p>
-                    <p>HOTEL PRICE</p>
-                    <p></p>
-                </div>
-                <div class="hotel-lists-container">
-                    <div>
-                        <p class="hotel-title">Ginger Hotel</p>
-                        <div class="hotel-type">Deluxe</div>
+         </div>
+        <!-- SUBSCRIBE TO OUR NEWSLETTER -->
+        <div class="subscribe-newsletter-blck">
+            <div class="subscribe-newsletter-inner bg-lg bg-sm">
+                <div class="left-blck">
+                    <h2>Stay in the know</h2>
+                    <p>Sign up to get marketing emails from DecoupeN, including promotions, rewards, travel experiences and information about DecoupeN.com’s services.</p>
+                    <div class="email-blck">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
                     </div>
-                    <p class="hotel-title">221</p>
-                    <div>
-                        <p class="hotel-title">1400</p>
-                        <p class="hotel-discount-percent">-0.07%</p>
-                    </div>
-                    <button type="button" class="latest-book-nw-btn">book now</button>
                 </div>
-                <div class="hotel-lists-container">
-                    <div>
-                        <p class="hotel-title">Ginger Hotel</p>
-                        <div class="hotel-type">Deluxe</div>
-                    </div>
-                    <p class="hotel-title">221</p>
-                    <div>
-                        <p class="hotel-title">1400</p>
-                        <p class="hotel-discount-percent">-0.07%</p>
-                    </div>
-                    <button type="button" class="latest-book-nw-btn">book now</button>
+                <div class="right-blck">
+                    <img src="/assets/images/subscribe-imgs.png" alt="">
                 </div>
             </div>
         </div>

@@ -1,5 +1,89 @@
-.landing-page-main-container {
-    margin-top: 80px;
+
+.landing-search-cntr {
+    width: 100%;
+    height: 617px;
+    background: url('/assets/images/landing-banner.png') no-repeat right center;
+    margin-bottom: 45px;
+    .ppty-srch-block {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .ppty-srch-block .ttl-txt {
+        font-size: 54px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        color: #1F1F1F;
+        padding-top: 150px;
+        margin-top: 0;
+        font-family: 'Plus Jakarta Sans', serif;
+        span {
+            background: linear-gradient(0deg, #E6132F 0%, #F56B2B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .ppty-srch-block .desc-txt {
+        color: #5F5F5F;
+        font-size: 18px;
+        font-family: 'Plus Jakarta Sans', serif;
+        margin: 0;
+    }
+    .main-search-blck {
+        display: flex;
+        max-width: 860px;
+        height: 112px;
+        background-color: #fff;
+        margin-top: 70px;
+        padding: 28px 48px;
+        border-radius: 4px;
+        box-shadow: 0 4px 42px 0 rgba(195, 195, 195, 0.25);
+        .srch-items-blck {
+            border-right: 1px solid #E3E3E3;
+            padding-right: 30px;
+            margin-right: 30px;
+            &.last-elem {
+                border-right: 0;
+                padding-right: 0;
+                margin-right: 0;
+            }
+            h5 {
+                font-family: 'Plus Jakarta Sans', serif;
+                color: #000;
+                font-weight: 600;
+                font-size: 16px;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            input[type="text"] {
+                max-width: 100px;
+                border: 0;
+                font-family: 'Plus Jakarta Sans', serif;
+                font-weight: 500;
+                color: #939393;
+                font-size: 14px;
+                &:focus {
+                    border: 0;
+                    outline: 0;
+                }
+                &.calendar-input {
+                    max-width: 200px;
+                }
+            }
+            .sel-guests {
+                font-size: 14px;
+                font-family: 'Plus Jakarta Sans', serif;
+                font-weight: 500;
+                color: #939393;
+                cursor: pointer;
+            }
+        }
+        .main-srch-btn {
+            max-width: 155px;
+            margin-top: 0;
+            margin-left: auto;
+            font-size: 16px;
+        }
+    }
 }
 .landing-page-container {
     max-width: 1200px;
@@ -27,149 +111,220 @@
         font-weight: 600;
     }
 }
-.stand-out-blck {
-    margin-top: 140px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    row-gap: 50px;
-    column-gap: 20px;
-    .title-txt {
-        margin: 0;
-        font-size: 28px;
-        grid-column: 1/-1;
-        justify-self: center;
+.subscribe-newsletter-blck {
+    margin: 80px auto;
+    .subscribe-newsletter-inner {
+        min-height: 325px;
+        padding: 45px 80px;
+        border-radius: 8px;
+        box-shadow: 0 2px 32px 0 rgba(172, 172, 172, 0.25);
+        display: flex;
+        box-sizing: border-box;
+        &.bg-lg {
+            background: url('/assets/images/newsletter-bg-lg-right.png') no-repeat right top, url('/assets/images/newsletter-bg-lg-left.png') no-repeat right 64px top;
+        }
     }
-    .std-resns {
-        height: 140px;
-        background-color: #fff;
-        box-shadow: 0px 0px 20.4px rgba(191, 191, 191, 0.25);
+    .left-blck {
+        max-width: 540px;
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #4d4d4d;
+            line-height: 140%;
+            margin: 0;
+        }
+    }
+    .email-blck {
+        display: flex;
+        column-gap: 12px;
+        margin-top: 40px;
+        input {
+            flex: 1;
+            height: 56px;
+            padding: 20px;
+            color: #5f5f5f;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #e4e4e4;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 164px;
+            height: 56px;
+            border-radius: 4px;
+            background-color: #1f1f1f;
+            color: #fff;
+            font-size: 18px;
+            font-family: 'Plus Jakarta Sans', serif;
+            font-weight: 600;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+    .right-blck {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            max-width: 290px;
+        }
+    }
+}
+.how-decoupon-wrks-blck {
+    margin: 80px 0;
+    padding: 70px 0;
+    background-color: #FFFAF4;
+    .ttl-txt {
+        color: #1F1F1F;
+        font-size: 32px;
+        font-family: 'Plus Jakarta Sans', serif;
+        font-weight: 600;
+        margin-top: 0;
+        text-align: center;
+        span {
+            background: linear-gradient(0deg, #E6132F 0%, #EC4C1D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .decoupn-steps-blck {
+        max-width: 1152px;
+        margin: 70px auto 0 auto;
         display: grid;
-        grid-template-columns: 1fr 140px;
-        grid-auto-rows: 140px 140px;
-        .imgs-blck-container {
-            width: 140px;
-            height: 140px;
-            border-top-left-radius: 80%;
-            background-color: #FFFAEC;
-            position: relative;
-            .imgs-blck {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: -20px;
-            }
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 96px;
+        h4 {
+            color: #5F5F5F;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 14px;
+            margin-bottom: 0;
         }
-        &.std-resns-1 {
-            grid-column: 1/2;
-            .imgs-blck-container {
-                .imgs-blck {
-                    width: 107px;
-                    height: 73px;
-                    background: url('/assets/images/sprite-svg.svg') no-repeat -30px -49px;
-                }
-            }
-        } 
-        &.std-resns-2 {
-            grid-column: 2/3;
-            .imgs-blck-container {
-                .imgs-blck {
-                    width: 105px;
-                    height: 95px;
-                    background: url('/assets/images/sprite-svg.svg') no-repeat -45px -147px;
-                }
-            }
+        img {
+            max-width: 100%;
         }
-        &.std-resns-3 {
-            grid-column: 3/4;
-            .imgs-blck-container {
-                .imgs-blck {
-                    width: 85px;
-                    height: 93px;
-                    background: url('/assets/images/sprite-svg.svg') no-repeat -153px -12px;
-                }
-            }
-        }
-        .std-info-blck {
-            padding-top: 34px;
-            padding-left: 28px;
-            h3 {
-                margin-top: 0;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            p {
+    }
+    .decoupn-step-1 {
+        grid-column: 1/2;
+        text-align: center;
+    }
+    .decoupn-step-2 {
+        grid-column: 2/3;
+        text-align: center;
+    }
+    .decoupn-step-3 {
+        grid-column: 3/4;
+        text-align: center;
+    }
+}
+.guests-counts-blck {
+    min-width: 340px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+    &:last-child {
+        border-bottom: 0;
+    }
+    .guests-count-cat-ttl {
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+        color: #1f1f1f;
+    }
+    .guests-count-range-ttl {
+        font-size: 14px;
+        color: #5f5f5f;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    ::ng-deep app-increment-decrement-counter {
+        .counter-container {
+            border: 0;
+            padding: 0;
+            .decrement,
+            .increment {
+                display: flex;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 1px solid #000;
                 margin: 0;
-                color: #5f5f5f;
-                font-size: 14px;
             }
         }
     }
 }
-.latest-hotel-rates-blck {
-    margin-top: 140px;
-    .title-txt {
-        font-family: "Plus Jakarta Sans", serif;
-        font-weight: 600;
-        font-size: 40px;
-        color: #222222;
-        margin: 0;
-    }
-    .hotels-lists-blck {
-        margin-top: 40px;
-    }
-    .hotel-list-title-blck {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        margin-bottom: 32px;
-        p {
-            margin: 0;
-            font-size: 18px;
-            color: #939393;
-            font-weight: 600;
+::ng-deep p-datepicker {
+    .p-datepicker {
+        input.p-inputtext {
+            font-family: "Plus Jakarta Sans", serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #818181;
+            border: 0;
+            padding-top: 2px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+        .p-datepicker-panel::before {
+            content: 'Check-In';
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #000;
+            padding-top: 5px;
+            padding-bottom: 15px;
         }
     }
-    .hotel-lists-container {
-        margin-bottom: 32px;
-        padding-bottom: 32px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-bottom: 1px solid #e4e4e4;
-    }
-    .hotel-title {
-        font-weight: 700;
-        font-size: 22px;
-        margin: 0;
-    }
-    .hotel-type {
-        width: fit-content;
-        background-color: #f3f3f3;
-        padding: 4px 10px;
-        font-size: 14px;
-        border-radius: 4px;
-        margin-top: 10px;
-    }
-    .hotel-discount-percent {
-        margin-top: 10px;
-        margin-bottom: 0;
-        font-weight: 600;
-        font-size: 18px;
-        color: #E6132F;
-    }
-    .latest-book-nw-btn {
-        width: 164px;
-        height: 60px;
-        justify-self: flex-end;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 700;
-        border-radius: 4px;
-        background-color: #1f1f1f;
-        border: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+    .p-datepicker-calendar {
+        .p-datepicker-header {
+            border-bottom: 0;
+            .p-datepicker-title {
+                gap: 0;
+                .p-datepicker-select-month,
+                .p-datepicker-select-year {
+                    pointer-events: none;
+                    font-size: 16px;
+                    font-family: "Plus Jakarta Sans", serif;
+                    font-weight: 700;
+                    color: #1f1f1f;
+                }
+            }
+        }
+        table.p-datepicker-day-view {
+            .p-datepicker-weekday-cell {
+                .p-datepicker-weekday {
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: #333;
+                }
+            }
+            tbody {
+                tr {
+                    td.p-datepicker-day-cell.p-datepicker-today {
+                        .p-datepicker-day {
+                            color: #fff;
+                            background-color: #1f1f1f;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
