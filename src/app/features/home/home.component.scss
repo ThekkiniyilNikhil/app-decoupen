@@ -328,3 +328,40 @@
         }
     }
 }
+.home-page-tags-blck {
+    padding: 0;
+    list-style: none;
+    margin-top: 32px;
+    margin-bottom: 0;
+    display: flex;
+    column-gap: 12px;
+    li {
+        font-size: 14px;
+        font-weight: 600;
+        color: #128754;
+        background-color: #ECFDF4;
+        border-radius: 2px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+    .lowest-price-ico {
+        width: 16px;
+        height: 22px;
+        background: url('/assets/images/sprite-png.png') no-repeat -120px -16px;
+        background-size: 472px 258px;
+    }
+    .assured-cb-ico {
+        width: 18px;
+        height: 18px;
+        background: url('/assets/images/sprite-png.png') no-repeat -154px -16px;
+        background-size: 472px 258px;
+    }
+    .free-cancel-ico {
+        width: 16px;
+        height: 16px;
+        background: url('/assets/images/sprite-png.png') no-repeat -190px -16px;
+        background-size: 472px 258px;
+    }
+}

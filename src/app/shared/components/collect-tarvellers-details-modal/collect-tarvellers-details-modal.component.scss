@@ -1,5 +1,5 @@
 .modal-cntr {
-    padding: 24px;
+    padding: 32px;
     font-family: "Plus Jakarta Sans", serif;
     position: relative;
     .close-icon {
@@ -83,6 +83,84 @@
             background-color: #1F1F1F;
             color: #fff;
         }
+        .step2-bck-btn {
+            width: 140px;
+        }
     }
-    
+    .dis-decpn-ttl {
+        font-size: 28px;
+        font-weight: 600;
+        color: #5F5F5F;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .dis-decpn-main-ttl {
+        font-size: 30px;
+        color: #1F1F1F;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 28px;
+    }
+    .disc-decpn-desc {
+        font-size: 16px;
+        color: #5F5F5F;
+        margin-top: 0;
+        margin-bottom: 22px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid #E9E9E9;
+    }
+    .why-decpn {
+        padding: 20px;
+        background-color: #F6F8FD;
+        margin-bottom: 48px;
+        h3 {
+            font-weight: 600;
+            font-size: 18px;
+            color: #1F1F1F;
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #5F5F5F;
+            margin: 0;
+        }
+    }
+    .agent-cntct-cntr {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+            font-weight: 600;
+            font-size: 30px;
+            color: #1F1F1F;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #5F5F5F;
+            margin: 0;
+        }
+        img {
+            margin-top: 20px;
+            margin-bottom: 48px;
+        }
+        .step3-ok-btn {
+            width: 140px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: "Plus Jakarta Sans", serif;
+            padding: 16px 0;
+            border-radius: 6px;
+            background-color: #1F1F1F;
+            border: 0;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    }
 }
