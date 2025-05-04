@@ -1,9 +1,8 @@
 <div class="modal-cntr">
     <!-- STEP 1 -->
-    <ng-container *ngIf="false">
-        <div class="close-icon" (click)="closeFn()"></div>
-        <h2>Make Travelling an Investment.</h2>
-        <h4>Do you have any recent travel plans?</h4>
+    <ng-container *ngIf="step === 'FORM'">
+        <h2>Decoupen makes travelling an investiment</h2>
+        <a class="know-more-btn" (click)="openDecouponDiscoverFn()">Want to know more ?</a>
         <div class="position-relative">
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" placeholder="Enter your full name" [(ngModel)]="fullName" [class.error-border]="formErrors.fullNameReqErr" (input)="onValueEnterFn()">
@@ -20,12 +19,12 @@
             <span class="error-message" *ngIf="formErrors.mobNumErr != ''">{{ formErrors.mobNumErr }}</span>
         </div>
         <div class="btn-contr">
-            <button type="button" class="cncl-btn" (click)="closeFn()">I’m not travelling now</button>
-            <button type="button" class="apprv-btn" (click)="submitFn()">Yes, I have a travel plan</button>
+            <button type="button" class="cncl-btn" (click)="openDecouponDiscoverFn()">I’m not travelling now</button>
+            <button type="button" class="apprv-btn" (click)="confirmTravelFn()">Yes, I have a travel plan</button>
         </div>
     </ng-container>
     <!-- STEP 2 -->
-    <ng-container *ngIf="false">
+    <ng-container *ngIf="step === 'DISCOVER_DECOUPON'">
         <h3 class="dis-decpn-ttl">Discover Decoupen:</h3>
         <h2 class="dis-decpn-main-ttl">Where every journey brings you joy—<br>and cashback.</h2>
         <p class="disc-decpn-desc">Are you ready to transform the way you travel? At Decoupen, we believe that every trip should be more than just an escape; it should be an opportunity to invest in your future. With our unique cashback model, your travel expenses can actually work for you!</p>
@@ -34,16 +33,15 @@
             <p>Invest in experiences—travel is one of the best investments you can make, and at Decoupen, we make it even more rewarding with exclusive cashback on every journey.</p>
         </div>
         <div class="btn-contr">
-            <button type="button" class="cncl-btn step2-bck-btn">Back</button>
+            <button type="button" class="cncl-btn step2-bck-btn" (click)="bakcToFormFn()">Back</button>
         </div>
     </ng-container>
     <!-- STEP 3 -->
-     <ng-container>
+     <ng-container *ngIf="step === 'AGENT_CONTACT'">
         <div class="agent-cntct-cntr">
             <h3>Great! You're all set for your<br> exclusive offers.</h3>
             <p>Our agent will contact you soon with your exclusive deals.</p>
             <img src="/assets/images/agent-contact.png" alt="agent-contact">
-            <button type="button" class="step3-ok-btn">Okay</button>
         </div>
      </ng-container>
 </div>

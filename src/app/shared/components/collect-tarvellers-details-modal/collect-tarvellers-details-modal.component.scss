@@ -2,28 +2,21 @@
     padding: 32px;
     font-family: "Plus Jakarta Sans", serif;
     position: relative;
-    .close-icon {
-        width: 13px;
-        height: 13px;
-        background: url('/assets/images/sprite-png.png') no-repeat -380px -124px;
-        background-size: 496px 258px;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 25px;
-    }
     h2 {
         color: #1F1F1F;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 600;
         margin: 0;
     }
-    h4 {
-        color: #5F5F5F;
-        font-size: 20px;
+    .know-more-btn {
+        display: block;
+        font-size: 18px;
         font-weight: 500;
-        margin-top: 8px;
-        margin-bottom: 30px;
+        color: #F0692A;
+        margin-top: 12px;
+        margin-bottom: 28px;
+        cursor: pointer;
+        text-decoration: underline;
     }
     label {
         display: block;
@@ -148,19 +141,6 @@
         img {
             margin-top: 20px;
             margin-bottom: 48px;
-        }
-        .step3-ok-btn {
-            width: 140px;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            font-family: "Plus Jakarta Sans", serif;
-            padding: 16px 0;
-            border-radius: 6px;
-            background-color: #1F1F1F;
-            border: 0;
-            cursor: pointer;
-            margin-bottom: 10px;
         }
     }
 }

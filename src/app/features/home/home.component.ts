@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePicker } from 'primeng/datepicker';
 import { Popover, PopoverModule } from 'primeng/popover';
@@ -13,11 +13,15 @@ import { CollectTarvellersDetailsModalComponent } from '../../shared/components/
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   // date range selector
   rangeDates: Date[] | undefined;
   currentDay: Date = new Date();
+
+  ngOnInit(): void {
+    this.searchPropertiesFn();
+  }
 
   @ViewChild('guestPopOver') guestPopOver!: Popover;
   toggleGuestsSelFn(event: any) {

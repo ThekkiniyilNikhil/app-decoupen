@@ -15,30 +15,30 @@ export class CollectTarvellersDetailsModalComponent {
   emailId = '';
   mobNumber = '';
   formErrors: any = {};
+  step: 'FORM' | 'DISCOVER_DECOUPON' | 'AGENT_CONTACT';
 
   constructor(
     @Optional() private dialogRef: MatDialogRef<CollectTarvellersDetailsModalComponent>, 
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-
+    this.step = 'FORM';
   }
 
   // close modal
-  closeFn() {
-    this.dialogRef.close();
+  openDecouponDiscoverFn() {
+    this.step = 'DISCOVER_DECOUPON';
   }
 
   // submit modal and pass values to parent component
-  submitFn() {
+  confirmTravelFn() {
     if(this.formValidatorFn()) {
       const postData = {
         fullName: this.fullName,
         emailId: this.emailId,
         mobNumber: this.mobNumber
       }
-      this.dialogRef.close(postData);
+      this.step = 'AGENT_CONTACT';
     }
-    
   }
 
   // modal form validation
@@ -69,6 +69,7 @@ export class CollectTarvellersDetailsModalComponent {
     return isValid;
   }
 
+  // method to check value entered, when typing
   onValueEnterFn() {
     if(this.fullName != '') {
       this.formErrors['fullNameReqErr'] = '';
@@ -79,5 +80,10 @@ export class CollectTarvellersDetailsModalComponent {
     if(this.mobNumber != '') {
       this.formErrors['mobNumErr'] = '';
     }
+  }
+
+  // method to redirect back to form
+  bakcToFormFn() {
+    this.step = 'FORM';
   }
 }
