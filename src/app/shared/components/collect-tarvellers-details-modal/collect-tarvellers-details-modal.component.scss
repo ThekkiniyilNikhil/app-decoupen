@@ -144,4 +144,76 @@
             margin-bottom: 48px;
         }
     }
+    .mob-bck-btn {
+        display: none;
+        width: 22px;
+        height: 22px;
+        background: url('/assets/images/back-arrw.png') no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    ::ng-deep .collect-travellers-detail-modal {
+        mat-dialog-container {
+            width: 95%;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+    .modal-cntr {
+        padding: 20px;
+        h2 {
+            font-size: 24px;
+            max-width: 300px;
+        }
+        .know-more-btn {
+            font-size: 16px;
+        }
+        .btn-contr {
+            flex-direction: column-reverse;
+            gap: 12px;
+            button,
+            .step2-bck-btn {
+                width: 100%;
+            }
+        }
+        .dis-decpn-ttl {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .dis-decpn-main-ttl {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .disc-decpn-desc {
+            font-size: 14px;
+        }
+        .why-decpn {
+            padding: 12px;
+            margin-bottom: 28px;
+        }
+        .why-decpn h3 {
+            font-size: 16px;
+        }
+        .why-decpn p {
+            font-size: 14px;
+        }
+        .mob-bck-btn {
+            display: block;
+        }
+        .agent-cntct-cntr {
+            margin-top: 45px;
+        }
+        .agent-cntct-cntr h3 {
+            font-size: 24px;
+        }
+        .agent-cntct-cntr p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
 }

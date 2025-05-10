@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   currentDay: Date = new Date();
 
   ngOnInit(): void {
-    this.searchPropertiesFn();
+    this.openCollectTravelInvestmentModalFn();
   }
 
   @ViewChild('guestPopOver') guestPopOver!: Popover;
@@ -52,11 +52,12 @@ export class HomeComponent implements OnInit {
 
   modalService = inject(MatDialog);
   // method to open search properties modal
-  searchPropertiesFn() {
+  openCollectTravelInvestmentModalFn() {
     const dialogRef = this.modalService.open(CollectTarvellersDetailsModalComponent, {
       width: '605px',
       maxWidth: '605px',
-      disableClose: true
+      disableClose: true,
+      panelClass: 'collect-travellers-detail-modal'
     });  
 
     dialogRef.afterClosed().subscribe(result => {
