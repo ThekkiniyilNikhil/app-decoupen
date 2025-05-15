@@ -1,6 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { OutsideClickDirective } from '../../Directives/outside-click.directive';
@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
   showDropDownInSmallDevices: boolean = false;
   parentHeaderClassName: string = '';
+  isScrolled = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -30,6 +31,13 @@ export class HeaderComponent implements OnInit {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.isScrolled = scrollY > 100; // change 100 to your desired pixel threshold
+    console.log('this.isScrolled', this.isScrolled)
   }
 
   // method to set class name to parent class for adjusting header styles, based on pages

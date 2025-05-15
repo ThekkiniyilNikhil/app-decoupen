@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'decoupen-app';
   currentUrl: string = '';
-  isLoginScreen: boolean = true;
+  isLoginScreen: boolean = false;
 
   constructor(private router: Router) {
     

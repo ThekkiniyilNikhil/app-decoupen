@@ -49,7 +49,8 @@
     .icon-blck {
         width: 20px;
         height: 10px;
-        background: url('/assets/images/sprite-svg.svg') no-repeat -403px -8px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -379px -8px;
+        background-size: 472px 258px;
         margin-top: 6px;
         transition: transform 0.25s;
         &.rotate {

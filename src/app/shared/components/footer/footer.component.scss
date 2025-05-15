@@ -26,25 +26,29 @@
         display: inline-block;
         width: 20px;
         height: 20px;
-        background: url('/assets/images/sprite-svg.svg') no-repeat -260px -5px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -236px -5px;
+        background-size: 472px 258px;
     }
     .x-icon {
         display: inline-block;
         width: 20px;
         height: 16px;
-        background: url('/assets/images/sprite-svg.svg') no-repeat -300px -5px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -276px -5px;
+        background-size: 472px 258px;
     }
     .fb-icon {
         display: inline-block;
         width: 10px;
         height: 20px;
-        background: url('/assets/images/sprite-svg.svg') no-repeat -340px -1px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -316px -1px;
+        background-size: 472px 258px;
     }
     .linked-icon {
         display: inline-block;
         width: 20px;
         height: 20px;
-        background: url('/assets/images/sprite-svg.svg') no-repeat -370px 0px;
+        background: url('/assets/images/sprite-svg.svg') no-repeat -346px 0;
+        background-size: 472px 258px;
     }
     .tc-blck {
         grid-column: 1/2;

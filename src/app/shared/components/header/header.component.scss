@@ -3,12 +3,20 @@
     top: 0;
     right: 0;
     left: 0;
-    background: #fff;
+    background-color: #fff;
     z-index: 1;
     border-bottom: 1px solid #EFEFEF;
+    transition: background-color 0.2s;
     &.home-header {
         background-color: transparent;
         border-bottom: 0;
+    }
+    &.white-bg-header {
+        background: #fff;
+        .login-btn {
+            color: #fff;
+            background-color: #1f1f1f;
+        }
     }
 }
 .header-container {
@@ -39,13 +47,13 @@
     height: 42px;
     font-size: 14px;
     border-radius: 4px;
-    color: #fff;
+    color: #1f1f1f;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
     border: 0;
     padding: 0;
-    background-color: #1f1f1f;
+    background-color: #ffffff;
     font-family: "Plus Jakarta Sans", serif;
     font-weight: 600;
 }
@@ -53,12 +61,13 @@
     width: 16px;
     height: 16px;
     background: url('/assets/images/sprite-png.png') no-repeat  -229px -159px;
-    background-size: 496px 258px;
+    background-size: 472px 258px;
 }
 .menu-dropdown {
-    width: 36px;
-    height: 24px;
-    background: url('/assets/images/sprite-svg.svg') no-repeat  -40px -10px;
+    width: 31px;
+    height: 18px;
+    background: url('/assets/images/sprite-svg.svg') no-repeat  -17px -13px;
+    background-size: 472px 258px;
     cursor: pointer;
 }
 .header-right-blck {

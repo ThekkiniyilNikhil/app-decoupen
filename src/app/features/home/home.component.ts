@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   currentDay: Date = new Date();
 
   ngOnInit(): void {
-    this.openCollectTravelInvestmentModalFn();
+    // this.openCollectTravelInvestmentModalFn();
   }
 
   @ViewChild('guestPopOver') guestPopOver!: Popover;
